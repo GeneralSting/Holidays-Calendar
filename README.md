@@ -1,6 +1,6 @@
 # Country Holidays Calendar
 
-## Vue 3 + TypeScript + Vite + Nager.Date API
+## React + TypeScript + Vite + Nager.Date API
 
 ### Description
 
