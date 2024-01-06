@@ -17,7 +17,7 @@ export function Countries() {
     <>
       <div>
         {loading && <p>Loading...</p>}
-        {customError && <p>Error: {customError}</p>}
+        {customError && <p>{customError}</p>}
         {!loading && !customError && (
           <ul>
             {countries?.map((country: Country) => (

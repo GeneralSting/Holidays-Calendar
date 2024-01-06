@@ -1,5 +1,6 @@
 import CountryService from "../../../service/countryService";
 import { Country } from "../../../types/country";
+import handleError from "../../../utils/handleError";
 
 class AvailableCountries {
   private countryService: CountryService;
@@ -9,8 +10,12 @@ class AvailableCountries {
   }
 
   public async getAvailableCountries(): Promise<Country[]> {
-    const countriesResponse = await this.countryService.fetchCountries();
-    return Object.values(countriesResponse);
+    try {
+      const countriesResponse = await this.countryService.fetchCountries();
+      return Object.values(countriesResponse);
+    } catch (error) {
+      return handleError(error, "Failed to fetch available countries for input");
+    }
   }
 }
 

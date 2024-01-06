@@ -3,15 +3,15 @@ import { CountriesState } from "./types/countriesState";
 import AvailableCountries from "./models/availableCountries";
 
 export const fetchCountries = createAsyncThunk("countries/fetch", async () => {
-  const availableCountries = new AvailableCountries();
-  const response = await availableCountries.getAvailableCountries();
-  return response;
+    const availableCountries = new AvailableCountries();
+    const response = await availableCountries.getAvailableCountries();
+    return response;
 });
 
 const initialState: CountriesState = {
   countries: [],
   loading: false,
-  customError: null,
+  customError: undefined,
 };
 
 export const countriesSlice = createSlice({
@@ -22,7 +22,7 @@ export const countriesSlice = createSlice({
     builder
       .addCase(fetchCountries.pending, (state) => {
         state.loading = true;
-        state.customError = null;
+        state.customError = undefined;
       })
       .addCase(fetchCountries.fulfilled, (state, action) => {
         state.loading = false;
@@ -30,8 +30,7 @@ export const countriesSlice = createSlice({
       })
       .addCase(fetchCountries.rejected, (state, action) => {
         state.loading = false;
-        state.customError = action.payload ? action.payload.toString() : "An unknown Error";
-        console.dir(action.payload);
+        state.customError = action.error.message;
       });
   },
 });

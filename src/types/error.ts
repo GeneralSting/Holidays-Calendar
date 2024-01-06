@@ -1,5 +1,5 @@
 export type CustomError = {
   message: string,
-  code: number,
+  status: number,
   appLocation: string,
 }

@@ -7,7 +7,7 @@ class CountryService extends ApiService {
 
   constructor() {
     super();
-    this.countriesUrl = `${this.apiUrl}AvailableCountries/`;
+    this.countriesUrl = `${this.apiUrl}AvailableCountri/`;
     this.countryInfoUrl = `${this.apiUrl}CountryInfo/`;
   }
 
