@@ -9,6 +9,11 @@
   - manipulating API data
   - design
 
+### App UI
+- <b>MUI</b>: The React component library is selected for this project
+  1. main app UI purpose is to show list of holidays for the selected country through `calendar` component. MUI has many options for that kind of component
+  2. creating and switching themes
+
 ### Project
 
 1. Git Clone

@@ -1,4 +1,4 @@
-import AppError from "../models/AppError";
+import AppError from "../models/appError";
 
 abstract class ApiService {
   protected readonly apiUrl: string;

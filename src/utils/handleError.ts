@@ -1,4 +1,4 @@
-import AppError from "../models/AppError";
+import AppError from "../models/appError";
 
 const handleError = (error: unknown, additionalMessage?: string) => {
   if (error instanceof AppError) {

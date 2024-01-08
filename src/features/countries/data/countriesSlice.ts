@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { CountriesState } from "./types/countriesState";
-import AvailableCountries from "./models/availableCountries";
+import { CountriesState } from "../types/countriesState";
+import AvailableCountries from "../models/availableCountries";
 
 export const fetchCountries = createAsyncThunk("countries/fetch", async () => {
     const availableCountries = new AvailableCountries();
