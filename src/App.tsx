@@ -1,11 +1,40 @@
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import { CountrySelect } from "./features/countries/components/CountrySelect";
+import appRoutes from "./routes/AppRoutes";
+import { CssBaseline, Grid } from "@mui/material";
+import Header from "./layout/Header";
+import Footer from "./layout/Footer";
 
 function App() {
   return (
     <>
-      <h1>Hello World</h1>
-      <CountrySelect />
+      <Grid
+        sx={{ minHeight: "100%" }}
+        container
+        direction="column"
+        alignItems="stretch"
+      >
+        <Grid item>
+          <Header />
+        </Grid>
+        <Grid
+          item
+          xs
+          display="flex"
+          justifyContent="center"
+          alignItems="center"
+        >
+          <Routes>
+            {appRoutes.map((route, index) => (
+              <Route key={index} path={route.path} element={route.element} />
+            ))}
+          </Routes>
+        </Grid>
+        <Grid item>
+          <Footer />
+        </Grid>
+      </Grid>
+      <CssBaseline />
     </>
   );
 }
