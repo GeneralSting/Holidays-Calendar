@@ -1,5 +1,5 @@
-import { AppBar, Grid, IconButton, Toolbar, Typography } from "@mui/material";
-import SettingsIcon from "@mui/icons-material/Settings";
+import { AppBar, Grid, Toolbar, Typography } from "@mui/material";
+import { OptionsIcon } from "../features/headerOptions";
 
 const Header = () => {
   return (
@@ -13,14 +13,7 @@ const Header = () => {
             justifyContent="center"
             alignItems="center"
           >
-            <IconButton
-              edge="start"
-              color="inherit"
-              aria-label="menu"
-              sx={{ mr: 2 }}
-            >
-              <SettingsIcon />
-            </IconButton>{" "}
+            <OptionsIcon />
           </Grid>
           <Grid
             item
