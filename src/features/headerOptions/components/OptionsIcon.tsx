@@ -23,17 +23,15 @@ const OptionsIcon = () => {
   const dispatch = useAppDispatch();
   const appTheme = useAppSelector((state) => state.options.appTheme);
   const appLanguage = useAppSelector((state) => state.options.language);
-  
-
 
   const themeChange = (event: SelectChangeEvent<typeof appTheme>) => {
     const themeValue = event.target.value || "";
-    dispatch(setAppTheme(themeValue))
+    dispatch(setAppTheme(themeValue));
   };
 
   const languageChange = (event: SelectChangeEvent<typeof appLanguage>) => {
     const languageValue = event.target.value || "";
-    dispatch(setLanguage(languageValue))
+    dispatch(setLanguage(languageValue));
   };
 
   return (
@@ -46,13 +44,13 @@ const OptionsIcon = () => {
       >
         <SettingsIcon />
       </IconButton>
-      <Dialog open={open} onClose={() => setOpen(false)}>
+      <Dialog open={open} onClose={() => setOpen(false)} fullWidth>
         <DialogTitle
           sx={{
             display: "flex",
             justifyContent: "space-between",
             alignItems: "center",
-            mb: 1
+            mb: 1,
           }}
         >
           Change app options
@@ -68,7 +66,8 @@ const OptionsIcon = () => {
           <Grid container direction="row" alignItems="center" spacing={4}>
             <Grid
               item
-              xs={6}
+              md={6}
+              xs={12}
               display="flex"
               justifyContent="center"
               alignItems="center"
@@ -82,14 +81,18 @@ const OptionsIcon = () => {
                   input={<OutlinedInput label="Theme" />}
                 >
                   <MenuItem value="light">Light Theme</MenuItem>
+                  <MenuItem value="lightIncreased">
+                    Light Theme Increased
+                  </MenuItem>
                   <MenuItem value="dark">Dark Theme</MenuItem>
-                  <MenuItem value="custom">Custom Theme</MenuItem>
+                  <MenuItem value="solarized">Solarized Theme</MenuItem>
                 </Select>
               </FormControl>
             </Grid>
             <Grid
               item
-              xs={6}
+              md={6}
+              xs={12}
               display="flex"
               justifyContent="center"
               alignItems="center"
@@ -102,7 +105,7 @@ const OptionsIcon = () => {
                   onChange={languageChange}
                   input={<OutlinedInput label="Language" />}
                 >
-                  <MenuItem value="hr">Croaita</MenuItem>
+                  <MenuItem value="hr">Croaitan</MenuItem>
                   <MenuItem value="en">English</MenuItem>
                   <MenuItem value="ge">Germany</MenuItem>
                 </Select>
