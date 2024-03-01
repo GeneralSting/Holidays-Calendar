@@ -1,7 +1,9 @@
 import { AppBar, Grid, Toolbar, Typography } from "@mui/material";
 import { OptionsIcon } from "../features/headerOptions";
+import { useTranslation } from "react-i18next";
 
 const Header = () => {
+  const { t } = useTranslation("global");
   return (
     <AppBar position="static">
       <Toolbar variant="dense">
@@ -23,8 +25,8 @@ const Header = () => {
             alignItems="center"
             textAlign="center"
           >
-            <Typography variant="h4" color="inherit" component="h4">
-              Global Holidays
+            <Typography variant="h4" color="inherit" component="h4" noWrap>
+              {t("header.message")}
             </Typography>
           </Grid>
           <Grid

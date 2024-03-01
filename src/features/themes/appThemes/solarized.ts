@@ -1,6 +1,6 @@
-import { createTheme } from "@mui/material";
+import { Theme, createTheme } from "@mui/material";
 
-export const solarizedTheme = createTheme({
+export const solarized: Theme = createTheme({
   palette: {
     primary: {
       main: "#586e75", // Blue
@@ -12,8 +12,7 @@ export const solarizedTheme = createTheme({
     text: {
       primary: "#839496", // Base0
       secondary: "#93a1a1", // Base1
-    },    
-    
+    },
   },
   typography: {
     fontFamily: "Menlo, Consolas, 'Courier New', monospace", // Monospaced font
@@ -77,3 +76,5 @@ export const solarizedTheme = createTheme({
     },
   },
 });
+
+export const solarizedCode = "solarizedTheme";

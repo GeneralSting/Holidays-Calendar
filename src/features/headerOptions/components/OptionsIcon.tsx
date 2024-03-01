@@ -16,6 +16,8 @@ import CloseIcon from "@mui/icons-material/Close";
 import { useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../../hooks/storeHooks";
 import { setAppTheme, setLanguage } from "../data/optionsSlice";
+import { darkCode, lightCode, lightIncreasedCode, solarizedCode } from "../../themes";
+import i18n from "../../languages/utils/i18n";
 
 const OptionsIcon = () => {
   const [open, setOpen] = useState<boolean>(false);
@@ -32,6 +34,7 @@ const OptionsIcon = () => {
   const languageChange = (event: SelectChangeEvent<typeof appLanguage>) => {
     const languageValue = event.target.value || "";
     dispatch(setLanguage(languageValue));
+    i18n.changeLanguage(event.target.value)
   };
 
   return (
@@ -80,12 +83,12 @@ const OptionsIcon = () => {
                   onChange={themeChange}
                   input={<OutlinedInput label="Theme" />}
                 >
-                  <MenuItem value="light">Light Theme</MenuItem>
-                  <MenuItem value="lightIncreased">
+                  <MenuItem value={lightCode}>Light Theme</MenuItem>
+                  <MenuItem value={lightIncreasedCode}>
                     Light Theme Increased
                   </MenuItem>
-                  <MenuItem value="dark">Dark Theme</MenuItem>
-                  <MenuItem value="solarized">Solarized Theme</MenuItem>
+                  <MenuItem value={darkCode}>Dark Theme</MenuItem>
+                  <MenuItem value={solarizedCode}>Solarized Theme</MenuItem>
                 </Select>
               </FormControl>
             </Grid>

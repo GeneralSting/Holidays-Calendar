@@ -1,6 +1,6 @@
-import { createTheme } from "@mui/material";
+import { Theme, createTheme } from "@mui/material";
 
-export const lightThemeIncreased = createTheme({
+export const lightIncreased: Theme = createTheme({
   palette: {
     background: {
       paper: "#f2f2f2",
@@ -70,3 +70,5 @@ export const lightThemeIncreased = createTheme({
     },
   },
 });
+
+export const lightIncreasedCode = "lightThemeIncreased";

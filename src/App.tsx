@@ -5,7 +5,7 @@ import { CssBaseline, Grid, ThemeProvider } from "@mui/material";
 import Header from "./layout/Header";
 import Footer from "./layout/Footer";
 import { useAppSelector } from "./hooks/storeHooks";
-import getTheme from "./utils/getTheme";
+import { getTheme } from "./features/themes";
 
 function App() {
   const appTheme = useAppSelector((state) => state.options.appTheme);

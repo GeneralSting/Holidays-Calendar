@@ -1,0 +1,8 @@
+{
+  "header": {
+    "message": "header"
+  },
+  "main": {
+    "body": "main content"
+  }
+}
