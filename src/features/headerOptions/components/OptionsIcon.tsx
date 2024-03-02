@@ -16,8 +16,12 @@ import CloseIcon from "@mui/icons-material/Close";
 import { useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../../hooks/storeHooks";
 import { setAppTheme, setLanguage } from "../data/optionsSlice";
-import { darkCode, lightCode, lightIncreasedCode, solarizedCode } from "../../themes";
-import i18n from "../../languages/utils/i18n";
+import {
+  darkCode,
+  lightCode,
+  lightIncreasedCode,
+  solarizedCode,
+} from "../../themes";
 
 const OptionsIcon = () => {
   const [open, setOpen] = useState<boolean>(false);
@@ -34,7 +38,6 @@ const OptionsIcon = () => {
   const languageChange = (event: SelectChangeEvent<typeof appLanguage>) => {
     const languageValue = event.target.value || "";
     dispatch(setLanguage(languageValue));
-    i18n.changeLanguage(event.target.value)
   };
 
   return (
@@ -108,8 +111,8 @@ const OptionsIcon = () => {
                   onChange={languageChange}
                   input={<OutlinedInput label="Language" />}
                 >
-                  <MenuItem value="hr">Croaitan</MenuItem>
                   <MenuItem value="en">English</MenuItem>
+                  <MenuItem value="hr">Croaitan</MenuItem>
                   <MenuItem value="ge">Germany</MenuItem>
                 </Select>
               </FormControl>

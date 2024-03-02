@@ -6,40 +6,48 @@ import Header from "./layout/Header";
 import Footer from "./layout/Footer";
 import { useAppSelector } from "./hooks/storeHooks";
 import { getTheme } from "./features/themes";
+import { I18nextProvider } from "react-i18next";
+import i18nInitializer from "./features/languages/i18n/i18nInitializer";
 
 function App() {
   const appTheme = useAppSelector((state) => state.options.appTheme);
   return (
     <>
-      <ThemeProvider theme={getTheme(appTheme)}>
-        <Grid
-          sx={{ minHeight: "100%" }}
-          container
-          direction="column"
-          alignItems="stretch"
-        >
-          <Grid item>
-            <Header />
-          </Grid>
+      <I18nextProvider i18n={i18nInitializer()}>
+        <ThemeProvider theme={getTheme(appTheme)}>
           <Grid
-            item
-            xs
-            display="flex"
-            justifyContent="center"
-            alignItems="center"
+            sx={{ minHeight: "100%" }}
+            container
+            direction="column"
+            alignItems="stretch"
           >
-            <Routes>
-              {appRoutes.map((route, index) => (
-                <Route key={index} path={route.path} element={route.element} />
-              ))}
-            </Routes>
+            <Grid item>
+              <Header />
+            </Grid>
+            <Grid
+              item
+              xs
+              display="flex"
+              justifyContent="center"
+              alignItems="center"
+            >
+              <Routes>
+                {appRoutes.map((route, index) => (
+                  <Route
+                    key={index}
+                    path={route.path}
+                    element={route.element}
+                  />
+                ))}
+              </Routes>
+            </Grid>
+            <Grid item>
+              <Footer />
+            </Grid>
           </Grid>
-          <Grid item>
-            <Footer />
-          </Grid>
-        </Grid>
-        <CssBaseline />
-      </ThemeProvider>
+          <CssBaseline />
+        </ThemeProvider>
+      </I18nextProvider>
     </>
   );
 }

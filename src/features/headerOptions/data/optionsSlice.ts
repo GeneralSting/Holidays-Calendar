@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import { OptionsState } from "../types/optionsState";
 import LanguageStorage from "../models/languageStorage";
 import ThemeStorage from "../models/themeStorage";
+import i18n from "i18next";
 
 const languageStorage = new LanguageStorage();
 const themeStorage = new ThemeStorage();
@@ -22,6 +23,7 @@ export const optionsSlice = createSlice({
     setLanguage: (state, action) => {
       state.language = action.payload
       languageStorage.setValue(action.payload);
+      i18n.changeLanguage(action.payload)
     }
   }
 })
