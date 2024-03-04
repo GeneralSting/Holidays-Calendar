@@ -26,7 +26,7 @@ const Header = () => {
             textAlign="center"
           >
             <Typography variant="h4" color="inherit" component="h4" noWrap>
-              {t("header.message")}
+              {t("main.body")}
             </Typography>
           </Grid>
           <Grid

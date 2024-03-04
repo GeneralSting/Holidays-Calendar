@@ -1,11 +1,11 @@
-import { lightCode } from "../../themes";
+import { defaultTheme } from "../../themes";
 import { ILocalStorage } from "../interfaces/ILocalStorage";
 
 class ThemeStorage implements ILocalStorage {
   private defaultValue: string;
   private storageName: string;
 
-  constructor(defaultValue: string = lightCode) {
+  constructor(defaultValue: string = defaultTheme) {
     this.defaultValue = defaultValue;
     this.storageName = "userTheme";
   }

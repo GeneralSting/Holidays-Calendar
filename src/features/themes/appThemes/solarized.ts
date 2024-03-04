@@ -78,3 +78,4 @@ export const solarized: Theme = createTheme({
 });
 
 export const solarizedCode = "solarizedTheme";
+export const solarizedName = "Solarized Theme";

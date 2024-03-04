@@ -12,3 +12,4 @@ export const light: Theme = createTheme({
 });
 
 export const lightCode = "lightTheme";
+export const lightName = "Light Theme";

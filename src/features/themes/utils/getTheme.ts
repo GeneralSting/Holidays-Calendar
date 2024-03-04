@@ -1,27 +1,8 @@
-import {
-  dark,
-  darkCode,
-  light,
-  lightCode,
-  lightIncreased,
-  lightIncreasedCode,
-  solarized,
-  solarizedCode,
-} from "..";
+import { themes } from "..";
 
-const getTheme = (themeName: string) => {
-  switch (themeName) {
-    case lightCode:
-      return light;
-    case lightIncreasedCode:
-      return lightIncreased;
-    case darkCode:
-      return dark;
-    case solarizedCode:
-      return solarized;
-    default:
-      return light;
-  }
+const getTheme = (themeCode: string) => {
+  const selectedTheme = themes.find((theme) => theme.code === themeCode);
+  return selectedTheme ? selectedTheme.theme : themes[0].theme;
 };
 
 export default getTheme;

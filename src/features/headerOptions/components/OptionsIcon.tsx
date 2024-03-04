@@ -16,12 +16,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import { useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../../hooks/storeHooks";
 import { setAppTheme, setLanguage } from "../data/optionsSlice";
-import {
-  darkCode,
-  lightCode,
-  lightIncreasedCode,
-  solarizedCode,
-} from "../../themes";
+import { themes } from "../../themes";
 
 const OptionsIcon = () => {
   const [open, setOpen] = useState<boolean>(false);
@@ -86,12 +81,12 @@ const OptionsIcon = () => {
                   onChange={themeChange}
                   input={<OutlinedInput label="Theme" />}
                 >
-                  <MenuItem value={lightCode}>Light Theme</MenuItem>
-                  <MenuItem value={lightIncreasedCode}>
-                    Light Theme Increased
-                  </MenuItem>
-                  <MenuItem value={darkCode}>Dark Theme</MenuItem>
-                  <MenuItem value={solarizedCode}>Solarized Theme</MenuItem>
+                  {themes.map((theme, index) => (
+                    <MenuItem key={index} value={theme.code}>
+                      {theme.name}
+                    </MenuItem>
+                  ))}
+                  
                 </Select>
               </FormControl>
             </Grid>

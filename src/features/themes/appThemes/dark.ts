@@ -13,3 +13,4 @@ export const dark: Theme = createTheme({
 });
 
 export const darkCode = "darkTheme";
+export const darkName = "Dark Theme";

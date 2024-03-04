@@ -72,3 +72,4 @@ export const lightIncreased: Theme = createTheme({
 });
 
 export const lightIncreasedCode = "lightThemeIncreased";
+export const lightIncreasedName = "Light Theme Increased";
