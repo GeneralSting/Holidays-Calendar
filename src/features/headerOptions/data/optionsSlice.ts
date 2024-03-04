@@ -4,8 +4,8 @@ import LanguageStorage from "../models/languageStorage";
 import ThemeStorage from "../models/themeStorage";
 import i18n from "i18next";
 
-const languageStorage = new LanguageStorage();
-const themeStorage = new ThemeStorage();
+const languageStorage = LanguageStorage.getInstance();
+const themeStorage = ThemeStorage.getInstance();
 
 const initialState: OptionsState = {
   appTheme: themeStorage.getValue(),
