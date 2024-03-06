@@ -1,8 +1,32 @@
 {
+  "metaData": {
+    "name": "Croatian",
+    "localeName": "Hrvatski",
+    "abbr": "cro",
+    "localeAbbr": "hr"
+  },
+  "languages": {
+    "en": "Engleski",
+    "hr": "Hrvatski"
+  },
+  "themes": {
+    "light": "Svjetla Tema",
+    "lightIncreased": "Svjetla Tema Povećano",
+    "dark": "Tamna Tema",
+    "solarized": "Solarizirana Tema"
+  },
   "header": {
-    "message": "Zaglavlje"
+    "title": "Global Holidays",
+    "options": {
+      "title": "Izmjena opcija",
+      "themeLabel": "Tema",
+      "languageLabel": "Jezik"
+    }
   },
   "main": {
-    "body": "glavni kontent"
+    "hello": "Pozdrav svijete"
+  },
+  "footer": {
+    "message": "© Autorsko pravo GH"
   }
 }

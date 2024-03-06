@@ -1,6 +1,7 @@
 import { Theme, createTheme } from "@mui/material";
+import i18next from "i18next";
 
-export const lightIncreased: Theme = createTheme({
+const lightIncreased: Theme = createTheme({
   palette: {
     background: {
       paper: "#f2f2f2",
@@ -71,5 +72,10 @@ export const lightIncreased: Theme = createTheme({
   },
 });
 
-export const lightIncreasedCode = "lightThemeIncreased";
-export const lightIncreasedName = "Light Theme Increased";
+const lightIncreasedName = (): string => {
+  return i18next.t("themes.lightIncreased");
+};
+
+const lightIncreasedCode = "lightThemeIncreased";
+
+export { lightIncreased, lightIncreasedCode, lightIncreasedName };

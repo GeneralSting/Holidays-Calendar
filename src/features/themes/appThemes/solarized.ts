@@ -1,6 +1,7 @@
 import { Theme, createTheme } from "@mui/material";
+import i18next from "i18next";
 
-export const solarized: Theme = createTheme({
+const solarized: Theme = createTheme({
   palette: {
     primary: {
       main: "#586e75", // Blue
@@ -77,5 +78,10 @@ export const solarized: Theme = createTheme({
   },
 });
 
-export const solarizedCode = "solarizedTheme";
-export const solarizedName = "Solarized Theme";
+const solarizedName = (): string => {
+  return i18next.t("themes.solarized");
+};
+
+const solarizedCode = "solarizedTheme";
+
+export { solarized, solarizedName, solarizedCode };

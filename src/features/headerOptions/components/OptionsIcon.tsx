@@ -17,8 +17,12 @@ import { useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../../hooks/storeHooks";
 import { setAppTheme, setLanguage } from "../data/optionsSlice";
 import { themes } from "../../themes";
+import { useTranslation } from "react-i18next";
+import { languages } from "../../languages";
 
 const OptionsIcon = () => {
+  const { t } = useTranslation();
+
   const [open, setOpen] = useState<boolean>(false);
 
   const dispatch = useAppDispatch();
@@ -34,7 +38,6 @@ const OptionsIcon = () => {
     const languageValue = event.target.value || "";
     dispatch(setLanguage(languageValue));
   };
-
   return (
     <>
       <IconButton
@@ -54,7 +57,7 @@ const OptionsIcon = () => {
             mb: 1,
           }}
         >
-          Change app options
+          {t("header.options.title")}
           <IconButton
             color="inherit"
             onClick={() => setOpen(false)}
@@ -74,19 +77,22 @@ const OptionsIcon = () => {
               alignItems="center"
             >
               <FormControl sx={{ m: 1, minWidth: "100%" }}>
-                <InputLabel id="theme-select">Theme</InputLabel>
+                <InputLabel id="theme-select">
+                  {t("header.options.themeLabel")}
+                </InputLabel>
                 <Select
                   labelId="theme-select"
                   value={appTheme}
                   onChange={themeChange}
-                  input={<OutlinedInput label="Theme" />}
+                  input={
+                    <OutlinedInput label={t("header.options.themeLabel")} />
+                  }
                 >
                   {themes.map((theme, index) => (
                     <MenuItem key={index} value={theme.code}>
                       {theme.name}
                     </MenuItem>
                   ))}
-                  
                 </Select>
               </FormControl>
             </Grid>
@@ -99,16 +105,22 @@ const OptionsIcon = () => {
               alignItems="center"
             >
               <FormControl sx={{ m: 1, minWidth: "100%" }}>
-                <InputLabel id="language-select">Language</InputLabel>
+                <InputLabel id="language-select">
+                  {t("header.options.languageLabel")}
+                </InputLabel>
                 <Select
                   labelId="language-select"
                   value={appLanguage}
                   onChange={languageChange}
-                  input={<OutlinedInput label="Language" />}
+                  input={
+                    <OutlinedInput label={t("header.options.languageLabel")} />
+                  }
                 >
-                  <MenuItem value="en">English</MenuItem>
-                  <MenuItem value="hr">Croaitan</MenuItem>
-                  <MenuItem value="ge">Germany</MenuItem>
+                  {languages.map((language) => (
+                    <MenuItem key={language.abbr} value={language.abbr}>
+                      {language.name}
+                    </MenuItem>
+                  ))}
                 </Select>
               </FormControl>
             </Grid>

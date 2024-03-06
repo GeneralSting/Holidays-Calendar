@@ -1,4 +1,4 @@
-import { defaultLocale, locales } from "./locales/locales";
+import { defaultLocale, languages, locales } from "./locales/locales";
 
 export * from "./i18n/i18nInitializer";
-export { locales, defaultLocale }
+export { locales, defaultLocale, languages };

@@ -1,6 +1,7 @@
 import { Theme, createTheme } from "@mui/material";
+import i18next from "i18next";
 
-export const dark: Theme = createTheme({
+const dark: Theme = createTheme({
   palette: {
     mode: "dark",
     background: {
@@ -12,5 +13,10 @@ export const dark: Theme = createTheme({
   },
 });
 
-export const darkCode = "darkTheme";
-export const darkName = "Dark Theme";
+const darkName = (): string => {
+  return i18next.t("themes.dark");
+};
+
+const darkCode = "darkTheme";
+
+export { dark, darkCode, darkName };

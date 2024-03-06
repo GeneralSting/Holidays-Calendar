@@ -6,4 +6,6 @@ i18n.use(initReactI18next).init({
   interpolation: { escapeValue: false },
   resources: locales,
   lng: defaultLocale,
+  ns: ["global"],
+  defaultNS: "global",
 });

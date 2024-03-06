@@ -3,7 +3,7 @@ import { OptionsIcon } from "../features/headerOptions";
 import { useTranslation } from "react-i18next";
 
 const Header = () => {
-  const { t } = useTranslation("global");
+  const { t } = useTranslation();
   return (
     <AppBar position="static">
       <Toolbar variant="dense">
@@ -26,7 +26,7 @@ const Header = () => {
             textAlign="center"
           >
             <Typography variant="h4" color="inherit" component="h4" noWrap>
-              {t("main.body")}
+              {t("header.title")}
             </Typography>
           </Grid>
           <Grid

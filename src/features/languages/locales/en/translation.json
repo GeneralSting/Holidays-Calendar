@@ -1,8 +1,32 @@
 {
+  "metaData": {
+    "name": "English",
+    "localeName": "English",
+    "abbr": "en",
+    "localeAbbr": "en"
+  },
+  "languages": {
+    "en": "English",
+    "hr": "Croatian"
+  },
+  "themes": {
+    "light": "Light Theme",
+    "lightIncreased": "Light Theme Increased",
+    "dark": "Dark Theme",
+    "solarized": "Solarized Theme"
+  },
   "header": {
-    "message": "header"
+    "title": "Global Holidays",
+    "options": {
+      "title": "Change options",
+      "themeLabel": "Theme",
+      "languageLabel": "Language"
+    }
   },
   "main": {
-    "body": "main content"
+    "hello": "Hello World"
+  },
+  "footer": {
+    "message": "© Copyright GH"
   }
 }
