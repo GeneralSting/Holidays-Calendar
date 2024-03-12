@@ -67,7 +67,7 @@ const OptionsIcon = () => {
           </IconButton>
         </DialogTitle>
         <DialogContent>
-          <Grid container direction="row" alignItems="center" spacing={4}>
+          <Grid container direction="row" alignItems="center" spacing={2}>
             <Grid
               item
               md={6}

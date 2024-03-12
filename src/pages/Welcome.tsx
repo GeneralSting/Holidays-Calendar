@@ -1,8 +1,9 @@
 import { useTranslation } from "react-i18next";
+import { CountrySelect } from "../features/countries/components/CountrySelect";
 
 const Welcome = () => {
   const { t } = useTranslation();
-  return <div>{t("main.hello")}</div>;
+  return <CountrySelect />
 };
 
 export default Welcome;

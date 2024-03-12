@@ -1,7 +1,7 @@
-import { Theme, createTheme } from "@mui/material";
+import { Theme, createTheme, responsiveFontSizes } from "@mui/material";
 import i18next from "i18next";
 
-const solarized: Theme = createTheme({
+const solarizedTheme: Theme = createTheme({
   palette: {
     primary: {
       main: "#586e75", // Blue
@@ -77,6 +77,8 @@ const solarized: Theme = createTheme({
     },
   },
 });
+
+const solarized = responsiveFontSizes(solarizedTheme)
 
 const solarizedName = (): string => {
   return i18next.t("themes.solarized");

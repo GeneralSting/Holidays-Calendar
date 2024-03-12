@@ -1,18 +1,28 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../../hooks/storeHooks";
 import { fetchCountries } from "../data/countriesSlice";
-import Box from "@mui/material/Box";
-import TextField from "@mui/material/TextField";
-import Autocomplete from "@mui/material/Autocomplete";
 import NoDataMsg from "../../../components/NoDataMsg";
 import LoadingMsg from "../../../components/LoadingMsg";
 import ErrorMsg from "../../../components/ErrorMsg";
+import { useTranslation } from "react-i18next";
+import CountriesAutoComplete from "./CountriesAutoComplete";
+import { Grid, Typography } from "@mui/material";
+import { Country } from "../../../types/country";
+import BtnCountrySelect from "./BtnCountrySelect";
+import { useNavigate } from "react-router-dom";
 
-export function CountrySelect() {
+export const CountrySelect = () => {
+  const { t } = useTranslation();
   const dispatch = useAppDispatch();
   const countries = useAppSelector((state) => state.countries.countries);
   const loading = useAppSelector((state) => state.countries.loading);
   const customError = useAppSelector((state) => state.countries.customError);
+  const navigate = useNavigate();
+
+  const [selectedCountry, setSelectedCountry] = useState<Country | null>(null);
+  const navigateCountry = () => {
+    navigate(`${selectedCountry?.countryCode}`)
+  }
 
   useEffect(() => {
     dispatch(fetchCountries());
@@ -25,41 +35,48 @@ export function CountrySelect() {
       {!loading &&
         !customError &&
         (countries.length === 0 ? (
-          <NoDataMsg message="At the moments there are no available countries to select" />
+          <NoDataMsg message={t("main.global.noCountries")} />
         ) : (
-          <Autocomplete
-            id="country-search-select"
-            sx={{ width: 300 }}
-            options={countries}
-            autoHighlight
-            getOptionLabel={(country) => country.name}
-            renderOption={(props, country) => (
-              <Box
-                component="li"
-                sx={{ "& > img": { mr: 2, flexShrink: 0 } }}
-                {...props}
+          <Grid
+            sx={{ minHeight: "100%" }}
+            container
+            direction="column"
+            justifyContent="space-evenly"
+            spacing={12}
+            alignItems="center"
+          >
+            <Grid item>
+              <Grid
+                container
+                direction="column"
+                justifyContent="space-evenly"
+                spacing={6}
+                alignItems="stretch"
               >
-                <img
-                  loading="lazy"
-                  width="20"
-                  srcSet={`https://flagcdn.com/w40/${country.countryCode.toLowerCase()}.png 2x`}
-                  src={`https://flagcdn.com/w20/${country.countryCode.toLowerCase()}.png`}
-                  alt=""
-                />
-                {country.name} ({country.countryCode})
-              </Box>
-            )}
-            renderInput={(params) => (
-              <TextField
-                {...params}
-                label="Choose a country"
-                inputProps={{
-                  ...params.inputProps,
-                }}
-              />
-            )}
-          />
+                <Grid item>
+                  <Typography variant="h3" className="title-centered">
+                    {t("main.countrySelect.title")}
+                  </Typography>
+                </Grid>
+                <Grid item>
+                  <CountriesAutoComplete
+                    countries={countries}
+                    onCountrySelect={setSelectedCountry}
+                  />
+                </Grid>
+                <Grid item />
+                <Grid item />
+                <Grid item>
+                  <BtnCountrySelect
+                    selected={selectedCountry !== null ? true : false}
+                    countryName={selectedCountry?.name}
+                    btnClicked={navigateCountry}
+                  />
+                </Grid>
+              </Grid>
+            </Grid>
+          </Grid>
         ))}
     </>
   );
-}
+};

@@ -24,7 +24,17 @@
     }
   },
   "main": {
-    "hello": "Hello World"
+    "hello": "Hello World",
+    "global": {
+      "noCountries": "At the moments there are no available countries to select"
+    },
+    "countrySelect": {
+      "title": "Look holidays calendar of certain country",
+      "btnNoCountry": "Explore country",
+      "btnCountrySelected": "Explore: ",
+      "selectLabel": "Choose or enter a country",
+      "noOptions": "No country!"
+    }
   },
   "footer": {
     "message": "© Copyright GH"

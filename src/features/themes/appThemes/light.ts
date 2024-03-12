@@ -1,7 +1,7 @@
-import { Theme, createTheme } from "@mui/material";
+import { Theme, createTheme, responsiveFontSizes } from "@mui/material";
 import i18next from "i18next";
 
-const light: Theme = createTheme({
+const lightTheme: Theme = createTheme({
   palette: {
     background: {
       paper: "#f2f2f2",
@@ -11,6 +11,8 @@ const light: Theme = createTheme({
     },
   },
 });
+
+const light = responsiveFontSizes(lightTheme);
 
 const lightName = (): string => {
   return i18next.t("themes.light");

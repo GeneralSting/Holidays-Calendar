@@ -25,7 +25,12 @@ const Header = () => {
             alignItems="center"
             textAlign="center"
           >
-            <Typography variant="h4" color="inherit" component="h4" noWrap>
+            <Typography
+              variant="h4"
+              color="inherit"
+              component="h4"
+              sx={{ whiteSpace: "nowrap" }}
+            >
               {t("header.title")}
             </Typography>
           </Grid>
