@@ -53,6 +53,7 @@ const BtnCountrySelect: FC<BtnCountrySelectProps> = ({
         </Button>
       ) : (
         <Button
+          disabled
           variant="contained"
           size="large"
           sx={{
@@ -60,7 +61,6 @@ const BtnCountrySelect: FC<BtnCountrySelectProps> = ({
             padding: "1rem",
             borderRadius: 50,
           }}
-          disabled
         >
           {t("main.countrySelect.btnNoCountry")}
         </Button>

@@ -1,4 +1,4 @@
-import { Country } from "../../../types/country";
+import { Country } from "..";
 
 export type CountrySelectProps = {
   countries: Country[];

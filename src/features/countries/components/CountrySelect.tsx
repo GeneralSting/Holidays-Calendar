@@ -7,9 +7,9 @@ import ErrorMsg from "../../../components/ErrorMsg";
 import { useTranslation } from "react-i18next";
 import CountriesAutoComplete from "./CountriesAutoComplete";
 import { Grid, Typography } from "@mui/material";
-import { Country } from "../../../types/country";
 import BtnCountrySelect from "./BtnCountrySelect";
 import { useNavigate } from "react-router-dom";
+import { Country } from "..";
 
 export const CountrySelect = () => {
   const { t } = useTranslation();

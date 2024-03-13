@@ -3,7 +3,7 @@ import ArrowDropDownCircleIcon from "@mui/icons-material/ArrowDropDownCircle";
 import { useTranslation } from "react-i18next";
 import { CountrySelectProps } from "../types/countrySelectProps";
 import { FC } from "react";
-import { Country } from "../../../types/country";
+import { Country } from "..";
 
 const CountriesAutoComplete: FC<CountrySelectProps> = ({
   countries,

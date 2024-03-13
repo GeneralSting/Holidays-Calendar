@@ -1,10 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit'
-import countriesSlice from './features/countries/data/countriesSlice';
 import { optionsSlice } from './features/headerOptions';
+import { countriesSlice } from './features/countries';
+import { countrySlice } from './features/selectedCountry';
 
 const store = configureStore({
   reducer: {
     countries: countriesSlice,
+    country: countrySlice,
     options: optionsSlice
   }
 })

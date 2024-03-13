@@ -28,6 +28,7 @@ abstract class ApiService {
   }
 
   protected async fetchData<TData>(url: string): Promise<TData> {
+    console.log("object");
     const response = await fetch(url);
     const responseData = await this.handleErrors(response);
     return responseData as TData;
