@@ -26,7 +26,14 @@
   "main": {
     "hello": "Pozdrav svijete",
     "global": {
-      "noCountries": "Trenutno nemamo država za prikazati"
+      "noCountries": "Trenutno nemamo država za prikazati",
+      "dataLoading": "Učitavanje...",
+      "dataError": "Pogreška je nastala!",
+      "noData": "Nema podataka za prikazati",
+      "noInfoData": "Nemamo podatke o informacijama odabrane države",
+      "noHolidaysData": "Nemamo podatke o praznicima odabrane države",
+      "answerNo": "Ne",
+      "answerYes": "Da"
     },
     "countrySelect": {
       "title": "Pregledajte kalendar praznika određene države",
@@ -34,6 +41,25 @@
       "btnCountrySelected": "Istražite: ",
       "selectLabel": "Odaberite ili unesite državu",
       "noOptions": "Nema država!"
+    },
+    "countryInfo": {
+      "commonName": "Naziv:",
+      "officialName": "Službeni naziv:",
+      "countryCode": "Skraćenica:",
+      "region": "Regija:",
+      "todayHoliday": "Danas je praznik: ",
+      "todayNotHoliday": "Danas nije praznik!"
+    },
+    "countryHoliday": {
+      "date": "Datum:",
+      "localeName": "Lokalni naziv:",
+      "name": "Naziv:",
+      "countryCode": "Kod države:",
+      "fixed": "Fiksan:",
+      "global": "Globalan:",
+      "counties": "Županije:",
+      "launchYear": "Početna godina:",
+      "types": "Tipovi:"
     }
   },
   "footer": {

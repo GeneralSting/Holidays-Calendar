@@ -42,7 +42,7 @@ export const CountrySelect = () => {
             container
             direction="column"
             justifyContent="space-evenly"
-            spacing={12}
+            spacing={16}
             alignItems="center"
           >
             <Grid item>
@@ -50,8 +50,8 @@ export const CountrySelect = () => {
                 container
                 direction="column"
                 justifyContent="space-evenly"
-                spacing={6}
                 alignItems="stretch"
+                gap={8}
               >
                 <Grid item>
                   <Typography variant="h3" className="title-centered">
