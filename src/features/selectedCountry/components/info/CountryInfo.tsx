@@ -11,7 +11,6 @@ import NoDataMsg from "../../../../components/NoDataMsg";
 import isObjectEmpty from "../../../../utils/isObjectEmpty";
 import { useTranslation } from "react-i18next";
 import InfoGrid from "./InfoGrid";
-import IsTodayHoliday from "./IsTodayHoliday";
 import NextHolidayGrid from "./NextHolidayGrid";
 
 const CountryInfo = () => {
@@ -30,7 +29,7 @@ const CountryInfo = () => {
       mt={4}
       direction="column"
       justifyContent="space-evenly"
-      alignItems="center"
+      alignItems="stretch"
       gap={12}
     >
       <Grid item>
@@ -67,11 +66,6 @@ const CountryInfo = () => {
                 >
                   <NextHolidayGrid nextHolidays={country.nextHolidays} />
                 </Paper>
-              </Grid>
-              <Grid item xs={10}>
-                <Paper elevation={4} square={false}>
-                  <IsTodayHoliday nextHolidays={country.nextHolidays} />
-                </Paper>{" "}
               </Grid>
             </Grid>
           ))}

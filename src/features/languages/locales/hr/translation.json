@@ -33,7 +33,8 @@
       "noInfoData": "Nemamo podatke o informacijama odabrane države",
       "noHolidaysData": "Nemamo podatke o praznicima odabrane države",
       "answerNo": "Ne",
-      "answerYes": "Da"
+      "answerYes": "Da",
+      "today": "Danas"
     },
     "countrySelect": {
       "title": "Pregledajte kalendar praznika određene države",

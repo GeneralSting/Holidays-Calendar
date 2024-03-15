@@ -33,7 +33,8 @@
       "noInfoData": "There is no information data about selected country",
       "noHolidaysData": "There is no country holidays data",
       "answerNo": "No",
-      "answerYes": "Yes"
+      "answerYes": "Yes",
+      "today": "Today"
     },
     "countrySelect": {
       "title": "Look holidays calendar of certain country",

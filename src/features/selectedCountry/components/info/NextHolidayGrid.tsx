@@ -1,16 +1,13 @@
-import { useTranslation } from "react-i18next";
 import { CountryHoliday } from "../../types/countryHoliday";
 import { getCurrentDate } from "../../../../utils/getDateInfo";
 import { useEffect, useState } from "react";
-import { Grid, Typography } from "@mui/material";
-import VerticalTabs from "../../../../components/VerticalTabs";
+import VerticalTabs from "./VerticalTabs";
 
 const NextHolidayGrid = ({
   nextHolidays,
 }: {
   nextHolidays: CountryHoliday[];
 }) => {
-  const { t } = useTranslation();
   const currentDate = getCurrentDate();
   const [nextDateHolidays, setNextDateHolidays] = useState<CountryHoliday[]>();
 
@@ -28,7 +25,7 @@ const NextHolidayGrid = ({
 
   return (
     <>
-    <VerticalTabs />
+      {nextDateHolidays && <VerticalTabs holidays={nextDateHolidays} />}
       {/* {nextDateHolidays && (
         <Grid container spacing={2} sx={{ textAlign: "start" }}>
           <Grid item xs={6}>
