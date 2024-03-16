@@ -1,6 +1,6 @@
 import { CountrySelect } from "./components/CountrySelect";
-import countriesSlice from "./data/countriesSlice";
+import countriesSlice, { fetchCountries } from "./data/countriesSlice";
 import { Country } from "./types/country";
 
-export { CountrySelect, countriesSlice };
+export { CountrySelect, countriesSlice, fetchCountries };
 export type { Country };

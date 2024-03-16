@@ -9,7 +9,7 @@ const appRoutes: AppRoute[] = [
     element: <Welcome />
   },
   {
-    path: "/:country",
+    path: "/:selectedCountryCode",
     element: <CountryHolidays />
   },
   {

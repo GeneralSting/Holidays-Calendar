@@ -43,13 +43,17 @@
       "selectLabel": "Choose or enter a country",
       "noOptions": "No country!"
     },
+    "unregisteredCountrySelect": "Country with entered country code is not registered in our list of countries",
     "countryInfo": {
       "commonName": "Common name:",
       "officialName": "Official name:",
       "countryCode": "Country code",
       "region": "Region:",
       "todayHoliday": "Today is a holiday: ",
-      "todayNotHoliday": "Today is not a holiday!"
+      "todayNotHoliday": "Today is not a holiday!",
+      "holidayName": "Name:",
+      "holidayLocalName": "Local name:",
+      "holidayFixed": "Fixed:"
     },
     "countryHoliday": {
       "date": "Date:",

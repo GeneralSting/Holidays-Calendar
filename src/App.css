@@ -10,3 +10,11 @@ a {
 .title-centered {
   text-align: center;
 }
+
+.centered-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+}

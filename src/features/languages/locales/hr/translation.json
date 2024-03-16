@@ -43,13 +43,17 @@
       "selectLabel": "Odaberite ili unesite državu",
       "noOptions": "Nema država!"
     },
+    "unregisteredCountrySelect": "Uneseni kod države ne nalazi se na našem popisu država",
     "countryInfo": {
       "commonName": "Naziv:",
       "officialName": "Službeni naziv:",
       "countryCode": "Skraćenica:",
       "region": "Regija:",
       "todayHoliday": "Danas je praznik: ",
-      "todayNotHoliday": "Danas nije praznik!"
+      "todayNotHoliday": "Danas nije praznik!",
+      "holidayName": "Name:",
+      "holidayLocalName": "Local name:",
+      "holidayFixed": "Fixed:"
     },
     "countryHoliday": {
       "date": "Datum:",
