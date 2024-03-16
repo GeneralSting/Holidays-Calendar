@@ -28,8 +28,8 @@ function App() {
             justifyContent="center"
           >
             <Grid container direction="row">
-              <Grid item xs={2} />
-              <Grid item xs={8}>
+              <Grid item sm={2} />
+              <Grid item sm={8} xs>
                 <Routes>
                   {appRoutes.map((route, index) => (
                     <Route
@@ -40,7 +40,7 @@ function App() {
                   ))}
                 </Routes>
               </Grid>
-              <Grid item xs={2} />
+              <Grid item sm={2} />
             </Grid>
           </Grid>
           <Grid item>

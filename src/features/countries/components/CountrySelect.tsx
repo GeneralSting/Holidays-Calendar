@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../../hooks/storeHooks";
-import { fetchCountries } from "../data/countriesSlice";
 import NoDataMsg from "../../../components/NoDataMsg";
 import LoadingMsg from "../../../components/LoadingMsg";
 import ErrorMsg from "../../../components/ErrorMsg";
@@ -9,7 +8,7 @@ import CountriesAutoComplete from "./CountriesAutoComplete";
 import { Grid, Typography } from "@mui/material";
 import BtnCountrySelect from "./BtnCountrySelect";
 import { useNavigate } from "react-router-dom";
-import { Country } from "..";
+import { Country, fetchCountries } from "..";
 
 export const CountrySelect = () => {
   const { t } = useTranslation();
@@ -21,8 +20,9 @@ export const CountrySelect = () => {
 
   const [selectedCountry, setSelectedCountry] = useState<Country | null>(null);
   const navigateCountry = () => {
-    navigate(`${selectedCountry?.countryCode}`)
-  }
+    console.log(selectedCountry?.countryCode);
+    navigate(`${selectedCountry?.countryCode}`);
+  };
 
   useEffect(() => {
     dispatch(fetchCountries());
@@ -38,7 +38,7 @@ export const CountrySelect = () => {
           <NoDataMsg message={t("main.global.noCountries")} />
         ) : (
           <Grid
-            sx={{ minHeight: "100%" }}
+            sx={{ minHeight: "100%", pl: 1, pr: 1 }} // padding: xs={12} so we need little space from sides
             container
             direction="column"
             justifyContent="space-evenly"
