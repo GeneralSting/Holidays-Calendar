@@ -39,10 +39,14 @@ const HolidayHorizontalTabs: React.FC<InfoNextHolidays> = ({
         sx={{ borderBottom: 1, borderColor: "divider", mb: 2 }}
       >
         {todayHolidays.length === 0 ? (
-          <Tab label={t("main.global.today")} {...a11yProps(0)} />
+          <Tab key="today" label={t("main.global.today")} {...a11yProps(0)} />
         ) : (
           todayHolidays.map((_holiday, index) => (
-            <Tab label={t("main.global.today")} {...a11yProps(index)} />
+            <Tab
+              key={index}
+              label={t("main.global.today")}
+              {...a11yProps(index)}
+            />
           ))
         )}
         {todayHolidays.length === 0
@@ -70,7 +74,7 @@ const HolidayHorizontalTabs: React.FC<InfoNextHolidays> = ({
           <NoTodayTabPanel value={value} index={0} />
           {nextHolidays.map((holiday, index) => (
             <HolidayTabPanel
-              key={index}
+              key={index + 1}
               value={value}
               index={index + 1}
               countryHoliday={holiday}
@@ -78,24 +82,24 @@ const HolidayHorizontalTabs: React.FC<InfoNextHolidays> = ({
           ))}
         </>
       ) : (
-        todayHolidays.map((holiday, index) => (
-          <>
+        <>
+          {todayHolidays.map((holiday, index) => (
             <HolidayTabPanel
               key={index}
               value={value}
               index={index}
               countryHoliday={holiday}
             />
-            {nextHolidays.map((holiday, index) => (
-              <HolidayTabPanel
-                key={index + todayHolidays.length}
-                value={value}
-                index={index + todayHolidays.length}
-                countryHoliday={holiday}
-              />
-            ))}
-          </>
-        ))
+          ))}
+          {nextHolidays.map((holiday, index) => (
+            <HolidayTabPanel
+              key={index + todayHolidays.length}
+              value={value}
+              index={index + todayHolidays.length}
+              countryHoliday={holiday}
+            />
+          ))}
+        </>
       )}
     </Box>
   );
