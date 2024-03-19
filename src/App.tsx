@@ -21,15 +21,10 @@ function App() {
           <Grid item>
             <Header />
           </Grid>
-          <Grid
-            item
-            xs
-            display="flex"
-            justifyContent="center"
-          >
-            <Grid container direction="row">
-              <Grid item sm={2} />
-              <Grid item sm={8} xs>
+          <Grid item xs display="flex" justifyContent="center">
+            <Grid container direction="row" sx={{ marginBottom: 2 }}>
+              <Grid item sm={1} />
+              <Grid item sm={10} xs>
                 <Routes>
                   {appRoutes.map((route, index) => (
                     <Route
@@ -40,7 +35,7 @@ function App() {
                   ))}
                 </Routes>
               </Grid>
-              <Grid item sm={2} />
+              <Grid item sm={1} />
             </Grid>
           </Grid>
           <Grid item>

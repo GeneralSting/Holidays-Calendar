@@ -10,8 +10,8 @@ const CountryCalendar = ({ countryCode }: { countryCode: string }) => {
         mt={4}
         direction="column"
         justifyContent="space-evenly"
-        alignItems="stretch"
-        gap={12}
+        alignItems="center"
+        gap={6}
       >
         <CountryInfo countryCode={countryCode} />
         <HolidaysCalendar countryCode={countryCode} />

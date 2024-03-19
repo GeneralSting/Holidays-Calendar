@@ -15,6 +15,22 @@
     "dark": "Tamna Tema",
     "solarized": "Solarizirana Tema"
   },
+  "weekdays": {
+    "monday": "Ponedjeljak",
+    "mondayShort": "Pon",
+    "tuesday": "Utorak",
+    "tuesdayShort": "Uto",
+    "wednesday": "Srijeda",
+    "wednesdayShort": "Sri",
+    "thursday": "Četvrtak",
+    "thursdayShort": "Čet",
+    "friday": "Petak",
+    "fridayShort": "Pet",
+    "saturday": "Subota",
+    "saturdayShort": "Sub",
+    "sunday": "Nedjelja",
+    "sundayShort": "Ned"
+  },
   "header": {
     "title": "Global Holidays",
     "options": {

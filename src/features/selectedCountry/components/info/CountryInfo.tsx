@@ -21,7 +21,7 @@ const CountryInfo: FC<CountryCalendar> = ({ countryCode }) => {
   }, [countryCode, dispatch]);
 
   return (
-    <Grid item sx={{ ml: 1, mr: 1 }}>
+    <Grid item sx={{ ml: 1, mr: 1 }} xs>
       {country.infoLoading && <LoadingMsg message={"Country info"} />}
       {country.infoCustomError && (
         <ErrorMsg message={country.infoCustomError} />
