@@ -1,8 +1,9 @@
-import { FC } from "react";
+import { FC, useEffect, useState } from "react";
 import { CalendarProps } from "../../types/calendarProps";
 import { useAppSelector } from "../../../../hooks/storeHooks";
 import getLocalWeekday from "../../../../utils/getLocalWeekdays";
 import {
+  Button,
   Grid,
   Paper,
   Table,
@@ -12,9 +13,19 @@ import {
   TableHead,
   TableRow,
 } from "@mui/material";
+import generateMonthDays from "../../utils/generateMonthDays";
+import extractHolidayMonths from "../../utils/extractHolidaysMonth";
+import React from "react";
+import { HolidayMonth } from "../../types/holidayMonth";
 
-const Calendar: FC<CalendarProps> = ({ year }) => {
+const Calendar: FC<CalendarProps> = ({ year, countryHolidays }) => {
   const currentLanguage = useAppSelector((state) => state.options.language);
+  const [holidayMonths, setHolidayMonths] = useState<HolidayMonth[]>([])
+
+  useEffect(() => {
+    setHolidayMonths(extractHolidayMonths(countryHolidays))
+  }, [countryHolidays, year])
+
 
   const months: JSX.Element[] = [];
   for (let month = 0; month < 12; month++) {
@@ -35,7 +46,8 @@ const Calendar: FC<CalendarProps> = ({ year }) => {
           </Grid>
           <Grid item xs={12}>
             <TableContainer component={Paper}>
-              <Table size="small"
+              <Table
+                size="small"
                 aria-label={`table ${new Date(year, month).toLocaleDateString(
                   currentLanguage,
                   {
@@ -44,8 +56,29 @@ const Calendar: FC<CalendarProps> = ({ year }) => {
                   }
                 )}`}
               >
-                <caption>proba</caption>
-                
+                {holidayMonths.some(
+                  (holidayMonth) => holidayMonth.month === month + 1
+                ) ? (
+                  <caption>
+                    {holidayMonths
+                      .filter(
+                        (holidayMonth) => holidayMonth.month === month + 1
+                      )
+                      .map((holidayMonth) =>
+                        holidayMonth.holidays.map((holiday) => (
+                          <React.Fragment key={holiday.name}>
+                            <span>
+                              {holiday.name} - {holiday.day}
+                            </span>
+                            <br />
+                          </React.Fragment>
+                        ))
+                      )}
+                  </caption>
+                ) : (
+                  <></>
+                )}
+
                 <TableHead>
                   <TableRow>
                     {getLocalWeekday().map((day, index) => (
@@ -58,11 +91,33 @@ const Calendar: FC<CalendarProps> = ({ year }) => {
                 <TableBody>
                   {generateMonthDays(year, month).map((week, weekIndex) => (
                     <TableRow key={weekIndex}>
-                      {week.map((day, dayIndex) => (
-                        <TableCell key={dayIndex} align="center">
-                          {day > 0 ? day : ""}
-                        </TableCell>
-                      ))}
+                      {week.map((day, dayIndex) => {
+                        const isButtonDay = holidayMonths.some(
+                          (holidayMonth) =>
+                            holidayMonth.month === month + 1 &&
+                            holidayMonth.holidays.some(
+                              (holidayDay) => holidayDay.day === day
+                            )
+                        );
+                        return (
+                          <TableCell
+                            key={dayIndex}
+                            align="center"
+                            sx={{ padding: 1 }}
+                          >
+                            {isButtonDay ? (
+                              <Button
+                                variant="contained"
+                                sx={{ padding: 0, minWidth: "100%" }}
+                              >
+                                {day}
+                              </Button>
+                            ) : (
+                              <>{day > 0 ? day : ""}</>
+                            )}
+                          </TableCell>
+                        );
+                      })}
                     </TableRow>
                   ))}
                 </TableBody>
@@ -81,19 +136,4 @@ const Calendar: FC<CalendarProps> = ({ year }) => {
   );
 };
 
-const generateMonthDays = (year: number, month: number): number[][] => {
-  const daysInMonth = new Date(year, month + 1, 0).getDate();
-  const firstDayOfMonth = new Date(year, month, 1).getDay();
-  const days = Array.from({ length: daysInMonth }, (_, i) => i + 1);
-  const blanks = Array.from({ length: (firstDayOfMonth + 6) % 7 }, () => 0);
-
-  const allDays = [...blanks, ...days];
-
-  const weeks: number[][] = [];
-  for (let i = 0; i < allDays.length; i += 7) {
-    weeks.push(allDays.slice(i, i + 7));
-  }
-
-  return weeks;
-};
 export default Calendar;

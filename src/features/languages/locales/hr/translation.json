@@ -67,9 +67,9 @@
       "region": "Regija:",
       "todayHoliday": "Danas je praznik: ",
       "todayNotHoliday": "Danas nije praznik!",
-      "holidayName": "Name:",
-      "holidayLocalName": "Local name:",
-      "holidayFixed": "Fixed:"
+      "holidayName": "Naziv:",
+      "holidayLocalName": "Lokalni naziv:",
+      "holidayFixed": "Stalan datum:"
     },
     "countryHoliday": {
       "date": "Datum:",
