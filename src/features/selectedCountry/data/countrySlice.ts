@@ -35,12 +35,21 @@ const initialState: CountryState = {
   infoCustomError: undefined,
   holidaysLoading: false,
   holidaysCustomError: undefined,
+  countryCode: undefined,
+  holidaysYear: undefined,
 };
 
 export const countriesSlice = createSlice({
   name: "country",
   initialState,
-  reducers: {},
+  reducers: {
+    updateCountryCode: (state, action) => {
+      state.countryCode = action.payload;
+    },
+    updateHolidaysYear: (state, action) => {
+      state.holidaysYear = action.payload;
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchCountryInfo.pending, (state) => {
@@ -72,4 +81,5 @@ export const countriesSlice = createSlice({
   },
 });
 
+export const { updateCountryCode, updateHolidaysYear } = countriesSlice.actions;
 export default countriesSlice.reducer;

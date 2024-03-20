@@ -26,6 +26,8 @@ const Calendar: FC<CalendarProps> = ({ year, countryHolidays }) => {
     setHolidayMonths(extractHolidayMonths(countryHolidays))
   }, [countryHolidays, year])
 
+  console.log(year);
+
 
   const months: JSX.Element[] = [];
   for (let month = 0; month < 12; month++) {
@@ -45,7 +47,7 @@ const Calendar: FC<CalendarProps> = ({ year, countryHolidays }) => {
             </h2>
           </Grid>
           <Grid item xs={12}>
-            <TableContainer component={Paper}>
+            <TableContainer component={Paper} elevation={4}>
               <Table
                 size="small"
                 aria-label={`table ${new Date(year, month).toLocaleDateString(

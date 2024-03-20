@@ -80,7 +80,11 @@
       "global": "Globalan:",
       "counties": "Županije:",
       "launchYear": "Početna godina:",
-      "types": "Tipovi:"
+      "types": "Tipovi:",
+      "calendar": "Kalendar praznika"
+    },
+    "countryWeekends": {
+      "switch": "Spojeni vikendi"
     }
   },
   "footer": {

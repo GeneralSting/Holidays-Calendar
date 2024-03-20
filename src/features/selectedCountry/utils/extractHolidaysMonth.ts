@@ -18,14 +18,14 @@ const extractHolidayMonths = (
     if (!foundMonth) {
       holidayMonths.push({
         month,
-        holidays: [{ name: holiday.name as string, day }],
+        holidays: [{ name: holiday.localName as string, day }],
       });
     } else {
       const foundHoliday = foundMonth.holidays.find(
-        (h) => h.name === holiday.name
+        (h) => h.name === holiday.localName
       );
       if (!foundHoliday) {
-        foundMonth.holidays.push({ name: holiday.name as string, day });
+        foundMonth.holidays.push({ name: holiday.localName as string, day });
       }
     }
   });

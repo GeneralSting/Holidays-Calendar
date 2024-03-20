@@ -1,10 +1,11 @@
 import { useParams } from "react-router-dom";
-import { CountryCalendar } from "../features/selectedCountry";
+import { CountryCalendar, updateCountryCode, updateHolidaysYear } from "../features/selectedCountry";
 import { useAppDispatch, useAppSelector } from "../hooks/storeHooks";
 import { fetchCountries } from "../features/countries";
 import { useEffect, useState } from "react";
 import { CircularProgress, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
+import { getCurrentYear } from "../utils/getDateInfo";
 
 const CountryHolidays = () => {
   const { selectedCountryCode } = useParams();
@@ -26,8 +27,12 @@ const CountryHolidays = () => {
     const checkRegisteredCountry = countries.filter(
       (country) => country.countryCode === selectedCountryCode
     );
+    if(checkRegisteredCountry.length > 0) {
+      dispatch(updateCountryCode(selectedCountryCode))
+      dispatch(updateHolidaysYear(getCurrentYear()))
+    }
     setRegisteredCountry(checkRegisteredCountry.length > 0);
-  }, [countries, selectedCountryCode]);
+  }, [countries, dispatch, selectedCountryCode]);
 
   return (
     <>

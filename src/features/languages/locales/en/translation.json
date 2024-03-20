@@ -80,7 +80,11 @@
       "global": "Global:",
       "counties": "Counties:",
       "launchYear": "Launch year:",
-      "types": "Types:"
+      "types": "Types:",
+      "calendar": "Holidays calendar"
+    },
+    "countryWeekends": {
+      "switch": "Long weekend"
     }
   },
   "footer": {
