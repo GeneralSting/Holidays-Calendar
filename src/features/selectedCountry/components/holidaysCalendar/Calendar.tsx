@@ -20,11 +20,12 @@ import { HolidayMonth } from "../../types/holidayMonth";
 
 const Calendar: FC<CalendarProps> = ({ year, countryHolidays }) => {
   const currentLanguage = useAppSelector((state) => state.options.language);
-  const [holidayMonths, setHolidayMonths] = useState<HolidayMonth[]>([])
+  const [holidayMonths, setHolidayMonths] = useState<HolidayMonth[]>([]);
+  console.log(holidayMonths);
 
   useEffect(() => {
-    setHolidayMonths(extractHolidayMonths(countryHolidays))
-  }, [countryHolidays, year])
+    setHolidayMonths(extractHolidayMonths(countryHolidays));
+  }, [countryHolidays, year]);
 
   const months: JSX.Element[] = [];
   for (let month = 0; month < 12; month++) {
