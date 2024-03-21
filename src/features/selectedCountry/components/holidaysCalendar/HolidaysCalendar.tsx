@@ -7,6 +7,7 @@ import { fetchCountryHolidays } from "../../data/countrySlice";
 import Calendar from "./Calendar";
 import CalendarOptions from "./CalendarOptions";
 import { getCurrentYear } from "../../../../utils/getDateInfo";
+import DataReadinessCheck from "../../../../components/DataReadinessCheck";
 
 const HolidaysCalendar: FC<CountryCalendar> = ({ countryCode }) => {
   const { t } = useTranslation();
@@ -21,16 +22,23 @@ const HolidaysCalendar: FC<CountryCalendar> = ({ countryCode }) => {
 
   return (
     <Grid item xs>
-      <Paper sx={{pb: 2}}>
-        <CalendarOptions />
-        <Divider sx={{m: 2}}>{t("main.countryHoliday.calendar")}</Divider>
-        {country.holidaysYear && (
-          <Calendar
-            year={country.holidaysYear}
-            countryHolidays={country.holidays}
-          />
-        )}
-      </Paper>
+      <DataReadinessCheck
+        loading={country.holidaysLoading}
+        loadingMessage={t("main.countryHoliday.loading")}
+        customError={country.holidaysCustomError}
+        data={country.holidays}
+      >
+        <Paper sx={{ pb: 2 }}>
+          <CalendarOptions />
+          <Divider sx={{ m: 2 }}>{t("main.countryHoliday.calendar")}</Divider>
+          {country.holidaysYear && (
+            <Calendar
+              year={country.holidaysYear}
+              countryHolidays={country.holidays}
+            />
+          )}
+        </Paper>
+      </DataReadinessCheck>
     </Grid>
   );
 };

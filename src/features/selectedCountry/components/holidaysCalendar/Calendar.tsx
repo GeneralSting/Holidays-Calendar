@@ -26,9 +26,6 @@ const Calendar: FC<CalendarProps> = ({ year, countryHolidays }) => {
     setHolidayMonths(extractHolidayMonths(countryHolidays))
   }, [countryHolidays, year])
 
-  console.log(year);
-
-
   const months: JSX.Element[] = [];
   for (let month = 0; month < 12; month++) {
     months.push(
@@ -67,8 +64,8 @@ const Calendar: FC<CalendarProps> = ({ year, countryHolidays }) => {
                         (holidayMonth) => holidayMonth.month === month + 1
                       )
                       .map((holidayMonth) =>
-                        holidayMonth.holidays.map((holiday) => (
-                          <React.Fragment key={holiday.name}>
+                        holidayMonth.holidays.map((holiday, index) => (
+                          <React.Fragment key={index}>
                             <span>
                               {holiday.name} - {holiday.day}
                             </span>

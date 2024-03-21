@@ -46,8 +46,6 @@
       "dataLoading": "Loading...",
       "dataError": "Error occured!",
       "noData": "No data to show",
-      "noInfoData": "There is no information data about selected country",
-      "noHolidaysData": "There is no country holidays data",
       "answerNo": "No",
       "answerYes": "Yes",
       "today": "Today"
@@ -61,6 +59,8 @@
     },
     "unregisteredCountrySelect": "Country with entered country code is not registered in our list of countries",
     "countryInfo": {
+      "loading": "Loading country info",
+      "noInfoData": "There is no information data about selected country",
       "commonName": "Common name:",
       "officialName": "Official name:",
       "countryCode": "Country code",
@@ -72,6 +72,8 @@
       "holidayFixed": "Fixed:"
     },
     "countryHoliday": {
+      "loading": "Loading holidays calendar",
+      "noHolidaysData": "There is no country holidays data",
       "date": "Date:",
       "localeName": "Local name:",
       "name": "Name:",

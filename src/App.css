@@ -13,8 +13,12 @@ a {
 
 .centered-div {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  height: 100%;
-  text-align: center;
+  justify-content: center;
+  height: 100%; /* Ensures the div takes the full height of its container */
+}
+
+.centered-div h3 {
+  margin-top: 16px; /* Adjust as needed */
 }

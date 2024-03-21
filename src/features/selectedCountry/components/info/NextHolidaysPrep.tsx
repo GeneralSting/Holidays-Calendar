@@ -2,6 +2,7 @@ import { CountryHoliday } from "../../types/countryHoliday";
 import { getCurrentDate } from "../../../../utils/getDateInfo";
 import { useEffect, useState } from "react";
 import HolidayHorizontalTabs from "./HolidayHorizontalTabs";
+import { CircularProgress } from "@mui/material";
 
 const NextHolidaysPrep = ({
   nextHolidays,
@@ -34,11 +35,15 @@ const NextHolidaysPrep = ({
 
   return (
     <>
-      {nextThreeHolidays.length !== 0 && (
+      {nextThreeHolidays.length !== 0 ? (
         <HolidayHorizontalTabs
           todayHolidays={todayHolidays}
           nextHolidays={nextThreeHolidays}
         />
+      ) : (
+        <div className="centered-div">
+          <CircularProgress color="primary" variant="indeterminate" />
+        </div>
       )}
     </>
   );

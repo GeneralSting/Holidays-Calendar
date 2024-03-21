@@ -12,5 +12,5 @@ export type CountryState = {
   holidaysLoading: boolean;
   holidaysCustomError: string | undefined;
   countryCode: string | undefined;
-  holidaysYear: number | undefined;
+  holidaysYear: number;
 };

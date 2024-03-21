@@ -46,8 +46,6 @@
       "dataLoading": "Učitavanje...",
       "dataError": "Pogreška je nastala!",
       "noData": "Nema podataka za prikazati",
-      "noInfoData": "Nemamo podatke o informacijama odabrane države",
-      "noHolidaysData": "Nemamo podatke o praznicima odabrane države",
       "answerNo": "Ne",
       "answerYes": "Da",
       "today": "Danas"
@@ -61,6 +59,8 @@
     },
     "unregisteredCountrySelect": "Uneseni kod države ne nalazi se na našem popisu država",
     "countryInfo": {
+      "loading": "Učitavanje podataka države",
+      "noInfoData": "Nemamo podatke o informacijama odabrane države",
       "commonName": "Naziv:",
       "officialName": "Službeni naziv:",
       "countryCode": "Skraćenica:",
@@ -72,6 +72,8 @@
       "holidayFixed": "Stalan datum:"
     },
     "countryHoliday": {
+      "loading": "Učitavanje kalendara praznika",
+      "noHolidaysData": "Nemamo podatke o praznicima odabrane države",
       "date": "Datum:",
       "localeName": "Lokalni naziv:",
       "name": "Naziv:",
