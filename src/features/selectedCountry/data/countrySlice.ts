@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { CountryState } from "../types/countryState";
 import CountryModel from "../models/countryModel";
-import { getCurrentYear } from "../../../utils/getDateInfo";
+import { getCurrentYear } from "../../../utils";
 
 export const fetchCountryInfo = createAsyncThunk(
   "countryInfo/fetch",

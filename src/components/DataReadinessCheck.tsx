@@ -1,10 +1,8 @@
 import { FC } from "react";
-import isObjectEmpty from "../utils/isObjectEmpty";
-import ErrorMsg from "./ErrorMsg";
-import LoadingMsg from "./LoadingMsg";
-import NoDataMsg from "./NoDataMsg";
 import { useTranslation } from "react-i18next";
-import { DataReadinessCheckProps } from "../types/DataReadinessCheckProps";
+import { DataReadinessCheckProps } from "../types";
+import { ErrorMsg, LoadingMsg, NoDataMsg } from ".";
+import { isObjectEmpty } from "../utils";
 
 const DataReadinessCheck: FC<DataReadinessCheckProps> = ({
   loading,

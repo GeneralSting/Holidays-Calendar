@@ -1,6 +1,6 @@
 import CountryService from "../services/countriesService";
-import handleError from "../../../utils/handleError";
 import { Country } from "..";
+import { handleError } from "../../../utils";
 
 class AvailableCountries {
   private countryService: CountryService;

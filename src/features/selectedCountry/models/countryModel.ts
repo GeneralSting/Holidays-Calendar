@@ -1,5 +1,4 @@
-import { getCurrentYear } from "../../../utils/getDateInfo";
-import handleError from "../../../utils/handleError";
+import { getCurrentYear, handleError } from "../../../utils";
 import CountryService from "../services/countryService";
 import { CountryHoliday } from "../types/countryHoliday";
 import { CountryInfo } from "../types/countryInfo";

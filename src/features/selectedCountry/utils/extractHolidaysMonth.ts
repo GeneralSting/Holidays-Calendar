@@ -11,7 +11,6 @@ const extractHolidayMonths = (
     const month = date.getMonth() + 1; // Month is zero-based
     const day = date.getDate();
 
-    console.log(holiday.localName);
     const foundMonth = holidayMonths.find((entry) => entry.month === month);
     if (!foundMonth) {
       holidayMonths.push({

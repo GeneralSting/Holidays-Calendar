@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next";
 import InfoGrid from "./InfoGrid";
 import { CountryCalendar } from "../../types/countryCalendarProps";
 import NextHolidaysPrep from "./NextHolidaysPrep";
-import DataReadinessCheck from "../../../../components/DataReadinessCheck";
+import { DataReadinessCheck } from "../../../../components";
 
 const CountryInfo: FC<CountryCalendar> = ({ countryCode }) => {
   const { t } = useTranslation();

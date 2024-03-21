@@ -1,4 +1,4 @@
-import { getCurrentYear } from "../../../utils/getDateInfo";
+import { getCurrentYear } from "../../../utils";
 
 const getCalendarYears = () => {
   const currentYear = getCurrentYear();

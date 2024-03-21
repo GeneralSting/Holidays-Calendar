@@ -1,6 +1,6 @@
 import i18next from "i18next";
 
-const getLocalWeekday = (): string[] => {
+const getLocalWeekdays = (): string[] => {
   return [
     i18next.t("weekdays.mondayShort"),
     i18next.t("weekdays.tuesdayShort"),
@@ -12,4 +12,4 @@ const getLocalWeekday = (): string[] => {
   ];
 };
 
-export default getLocalWeekday;
+export default getLocalWeekdays;

@@ -3,11 +3,11 @@ import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
 import { useTranslation } from "react-i18next";
-import formatDateLocal from "../../../../utils/formatDateLocal";
 import { useAppSelector } from "../../../../hooks/storeHooks";
 import { InfoNextHolidays } from "../../types/infoNextHolidays";
 import NoTodayTabPanel from "./NoTodayTabPanel";
 import HolidayTabPanel from "./HolidayTabPanel";
+import { formatDateLocal } from "../../../../utils";
 
 const a11yProps = (index: number) => {
   return {

@@ -1,6 +1,5 @@
-import { CountryInfo } from "../features/selectedCountry/types/countryInfo";
-import { CountryHoliday } from "../features/selectedCountry/types/countryHoliday";
-import { Country } from "../features/countries/types/country";
+import { Country } from "../features/countries";
+import { CountryHoliday, CountryInfo } from "../features/selectedCountry";
 
 export type DataReadinessCheckProps = {
   loading: boolean;

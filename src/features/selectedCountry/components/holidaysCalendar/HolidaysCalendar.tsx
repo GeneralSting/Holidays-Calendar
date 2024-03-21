@@ -6,8 +6,7 @@ import { useAppDispatch, useAppSelector } from "../../../../hooks/storeHooks";
 import { fetchCountryHolidays } from "../../data/countrySlice";
 import Calendar from "./Calendar";
 import CalendarOptions from "./CalendarOptions";
-import { getCurrentYear } from "../../../../utils/getDateInfo";
-import DataReadinessCheck from "../../../../components/DataReadinessCheck";
+import { DataReadinessCheck } from "../../../../components";
 
 const HolidaysCalendar: FC<CountryCalendar> = ({ countryCode }) => {
   const { t } = useTranslation();
@@ -16,9 +15,12 @@ const HolidaysCalendar: FC<CountryCalendar> = ({ countryCode }) => {
 
   useEffect(() => {
     dispatch(
-      fetchCountryHolidays({ countryCode: countryCode, year: getCurrentYear() })
+      fetchCountryHolidays({
+        countryCode: countryCode,
+        year: country.holidaysYear,
+      })
     );
-  }, [countryCode, dispatch]);
+  }, [country.holidaysYear, countryCode, dispatch]);
 
   return (
     <Grid item xs>

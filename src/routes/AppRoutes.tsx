@@ -1,7 +1,5 @@
-import CountryHolidays from "../pages/CountryHolidays";
-import PageNotFound from "../pages/PageNotFound";
-import Welcome from "../pages/Welcome";
-import { AppRoute } from "../types/appRoute";
+import { CountryHolidays, PageNotFound, Welcome } from "../pages";
+import { AppRoute } from "../types";
 
 const appRoutes: AppRoute[] = [
   {

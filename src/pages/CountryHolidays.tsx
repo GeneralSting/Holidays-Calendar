@@ -9,7 +9,7 @@ import { fetchCountries } from "../features/countries";
 import { useEffect, useState } from "react";
 import { CircularProgress, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
-import { getCurrentYear } from "../utils/getDateInfo";
+import { getCurrentYear } from "../utils";
 
 const CountryHolidays = () => {
   const { selectedCountryCode } = useParams();
@@ -63,22 +63,6 @@ const CountryHolidays = () => {
           ) : null}
         </>
       )}
-
-      {/**
-       *
-       * countryInfo -> isTodayHoliday -> nextHoliday
-       * ---
-       * publicHolidays [
-       *
-       * selectYear
-       * ||
-       * enterYear
-       * ]
-       *
-       * ---
-       * longWeekend
-       *
-       */}
     </>
   );
 };

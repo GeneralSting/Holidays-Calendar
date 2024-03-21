@@ -1,7 +1,6 @@
 import { FC, useEffect, useState } from "react";
 import { CalendarProps } from "../../types/calendarProps";
 import { useAppSelector } from "../../../../hooks/storeHooks";
-import getLocalWeekday from "../../../../utils/getLocalWeekdays";
 import {
   Button,
   Grid,
@@ -17,11 +16,11 @@ import generateMonthDays from "../../utils/generateMonthDays";
 import extractHolidayMonths from "../../utils/extractHolidaysMonth";
 import React from "react";
 import { HolidayMonth } from "../../types/holidayMonth";
+import { getLocalWeekdays } from "../../../../utils";
 
 const Calendar: FC<CalendarProps> = ({ year, countryHolidays }) => {
   const currentLanguage = useAppSelector((state) => state.options.language);
   const [holidayMonths, setHolidayMonths] = useState<HolidayMonth[]>([]);
-  console.log(holidayMonths);
 
   useEffect(() => {
     setHolidayMonths(extractHolidayMonths(countryHolidays));
@@ -81,7 +80,7 @@ const Calendar: FC<CalendarProps> = ({ year, countryHolidays }) => {
 
                 <TableHead>
                   <TableRow>
-                    {getLocalWeekday().map((day, index) => (
+                    {getLocalWeekdays().map((day, index) => (
                       <TableCell key={index} align="center">
                         {day}
                       </TableCell>

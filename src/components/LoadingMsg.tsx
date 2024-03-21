@@ -1,5 +1,5 @@
-import { ReporterProps } from "../types/reporterProps";
 import { CircularProgress } from "@mui/material";
+import { ReporterProps } from "../types";
 
 const LoadingMsg: React.FC<ReporterProps> = ({ message }) => {
   return (

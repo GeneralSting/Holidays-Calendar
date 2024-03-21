@@ -6,7 +6,7 @@ import { Grid, Typography } from "@mui/material";
 import BtnCountrySelect from "./BtnCountrySelect";
 import { useNavigate } from "react-router-dom";
 import { Country, fetchCountries } from "..";
-import DataReadinessCheck from "../../../components/DataReadinessCheck";
+import { DataReadinessCheck } from "../../../components";
 
 export const CountrySelect = () => {
   const { t } = useTranslation();

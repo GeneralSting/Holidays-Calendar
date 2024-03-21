@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { ReporterProps } from "../types/reporterProps";
+import { ReporterProps } from "../types";
 
 const NoDataMsg: React.FC<ReporterProps> = ({ message }) => {
   const { t } = useTranslation()

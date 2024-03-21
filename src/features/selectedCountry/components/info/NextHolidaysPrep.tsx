@@ -1,8 +1,8 @@
 import { CountryHoliday } from "../../types/countryHoliday";
-import { getCurrentDate } from "../../../../utils/getDateInfo";
 import { useEffect, useState } from "react";
 import HolidayHorizontalTabs from "./HolidayHorizontalTabs";
 import { CircularProgress } from "@mui/material";
+import { getCurrentDate } from "../../../../utils";
 
 const NextHolidaysPrep = ({
   nextHolidays,
