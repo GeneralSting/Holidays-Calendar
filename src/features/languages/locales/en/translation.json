@@ -74,6 +74,7 @@
     "countryHoliday": {
       "loading": "Loading holidays calendar",
       "noHolidaysData": "There is no country holidays data",
+      "holidayDialogTitle": "Holidays ",
       "date": "Date:",
       "localeName": "Local name:",
       "name": "Name:",

@@ -74,6 +74,7 @@
     "countryHoliday": {
       "loading": "Učitavanje kalendara praznika",
       "noHolidaysData": "Nemamo podatke o praznicima odabrane države",
+      "holidayDialogTitle": "Praznici ",
       "date": "Datum:",
       "localeName": "Lokalni naziv:",
       "name": "Naziv:",

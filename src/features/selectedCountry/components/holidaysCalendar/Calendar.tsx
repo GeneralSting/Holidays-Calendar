@@ -16,11 +16,19 @@ import generateMonthDays from "../../utils/generateMonthDays";
 import extractHolidayMonths from "../../utils/extractHolidaysMonth";
 import React from "react";
 import { HolidayMonth } from "../../types/holidayMonth";
-import { getLocalWeekdays } from "../../../../utils";
+import { formatDateApi, getLocalWeekdays } from "../../../../utils";
+import HolidayDialog from "./HolidayDialog";
 
 const Calendar: FC<CalendarProps> = ({ year, countryHolidays }) => {
   const currentLanguage = useAppSelector((state) => state.options.language);
   const [holidayMonths, setHolidayMonths] = useState<HolidayMonth[]>([]);
+  const [holidayDialog, setHolidayDialog] = useState<boolean>(false);
+  const [holidayDate, setHolidayDate] = useState<string | null>(null);
+
+  const handleHolidayDate = (month: number, day: number) => {
+    setHolidayDialog(true);
+    setHolidayDate(formatDateApi(new Date(year, month, day)));
+  };
 
   useEffect(() => {
     setHolidayMonths(extractHolidayMonths(countryHolidays));
@@ -108,6 +116,7 @@ const Calendar: FC<CalendarProps> = ({ year, countryHolidays }) => {
                               <Button
                                 variant="contained"
                                 sx={{ padding: 0, minWidth: "100%" }}
+                                onClick={() => handleHolidayDate(month, day)}
                               >
                                 {day}
                               </Button>
@@ -129,9 +138,16 @@ const Calendar: FC<CalendarProps> = ({ year, countryHolidays }) => {
   }
 
   return (
-    <Grid container direction="row">
-      {months}
-    </Grid>
+    <>
+      <Grid container direction="row">
+        {months}
+      </Grid>
+      <HolidayDialog
+        dialogOpen={holidayDialog}
+        holidayDate={holidayDate}
+        closeDialog={() => setHolidayDialog(false)}
+      />
+    </>
   );
 };
 

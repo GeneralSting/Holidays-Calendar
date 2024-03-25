@@ -1,3 +1,4 @@
+import formatDateApi from "./formatDateApi";
 import formatDateLocal from "./formatDateLocal";
 import { getCurrentDate, getCurrentYear } from "./getDateInfo";
 import getLocalWeekdays from "./getLocalWeekdays";
@@ -11,4 +12,5 @@ export {
   getLocalWeekdays,
   handleError,
   isObjectEmpty,
+  formatDateApi,
 };
