@@ -28,7 +28,6 @@ const HolidayDialog: FC<HolidayDialogProps> = ({
     if (holidayDate !== null) {
       return getHolidaysByDate(countryHolidays, holidayDate);
     }
-    // If holidayDate is null, return null or whatever makes sense in your context
     return null;
   }, [countryHolidays, holidayDate]);
 

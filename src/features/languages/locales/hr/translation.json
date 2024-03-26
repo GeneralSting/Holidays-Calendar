@@ -84,7 +84,9 @@
       "counties": "Županije:",
       "launchYear": "Početna godina:",
       "types": "Tipovi:",
-      "calendar": "Kalendar praznika"
+      "calendar": "Kalendar praznika",
+      "calendarDialogTitle": "Univerzalnost kalendara?",
+      "calendarDialogContent": "Ovakav prikaz kalendara i njegovih praznika je univerzalan, tj. isti je tip kalendara neovisno o odabranoj državi ili lokalizaciji. Početni dan kalendara je ponedjeljak. Odabrani univerzalni prikaz nije naklonjen nijednoj regiji ili religiji. Jedina mu je svrha prikaz praznika. Odabrani pristup je odlučen zbog same jednostavnosti prikaza."
     },
     "countryWeekends": {
       "switch": "Spojeni vikendi"
