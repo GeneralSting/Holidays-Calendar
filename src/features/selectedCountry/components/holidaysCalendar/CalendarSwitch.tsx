@@ -1,19 +1,28 @@
 import { FormControlLabel, FormGroup, Switch } from "@mui/material";
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent } from "react";
 import { useTranslation } from "react-i18next";
+import { useAppDispatch, useAppSelector } from "../../../../hooks/storeHooks";
+import { updateCheckLongWeekends } from "../../data/countrySlice";
 
 const CalendarSwitch = () => {
   const { t } = useTranslation();
-  const [checked, setChecked] = useState<boolean>(false);
+  const longWeekends = useAppSelector(
+    (state) => state.country.checkedLongWeekends
+  );
+  const dispatch = useAppDispatch();
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setChecked(event.target.checked);
+    dispatch(updateCheckLongWeekends(event.target.checked));
   };
   return (
     <FormGroup>
       <FormControlLabel
         control={
-          <Switch size="medium" checked={checked} onChange={handleChange} />
+          <Switch
+            size="medium"
+            checked={longWeekends}
+            onChange={handleChange}
+          />
         }
         label={t("main.countryWeekends.switch")}
       />

@@ -13,4 +13,5 @@ export type CountryState = {
   holidaysCustomError: string | undefined;
   countryCode: string | undefined;
   holidaysYear: number;
+  checkedLongWeekends: boolean;
 };

@@ -2,7 +2,6 @@ import { FC, useEffect, useState } from "react";
 import { CalendarProps } from "../../types/calendarProps";
 import { useAppSelector } from "../../../../hooks/storeHooks";
 import {
-  Button,
   Grid,
   Paper,
   Table,
@@ -18,12 +17,22 @@ import React from "react";
 import { HolidayMonth } from "../../types/holidayMonth";
 import { formatDateApi, getLocalWeekdays } from "../../../../utils";
 import HolidayDialog from "./HolidayDialog";
+import extractLongWeekends from "../../utils/extractLongWeekends";
+import { longWeekendMonth } from "../../types/longWeekendMonth";
+import CalendarTableBody from "./CalendarTableBody";
 
 const Calendar: FC<CalendarProps> = ({ year, countryHolidays }) => {
+  const showLongWeekends = useAppSelector(
+    (state) => state.country.checkedLongWeekends
+  );
+  const longWeekends = useAppSelector((state) => state.country.longWeekend);
   const currentLanguage = useAppSelector((state) => state.options.language);
   const [holidayMonths, setHolidayMonths] = useState<HolidayMonth[]>([]);
   const [holidayDialog, setHolidayDialog] = useState<boolean>(false);
   const [holidayDate, setHolidayDate] = useState<string | null>(null);
+  const [longWeekendMonths, setLongWeekendMonths] = useState<
+    longWeekendMonth[]
+  >([]);
 
   const handleHolidayDate = (month: number, day: number) => {
     setHolidayDialog(true);
@@ -31,8 +40,14 @@ const Calendar: FC<CalendarProps> = ({ year, countryHolidays }) => {
   };
 
   useEffect(() => {
-    setHolidayMonths(extractHolidayMonths(countryHolidays));
-  }, [countryHolidays, year]);
+    const value = extractHolidayMonths(countryHolidays);
+    setHolidayMonths(value);
+    if (showLongWeekends) {
+      setLongWeekendMonths(extractLongWeekends(longWeekends, year));
+    } else {
+      setLongWeekendMonths([]);
+    }
+  }, [countryHolidays, longWeekends, showLongWeekends, year]);
 
   const months: JSX.Element[] = [];
   for (let month = 0; month < 12; month++) {
@@ -96,38 +111,18 @@ const Calendar: FC<CalendarProps> = ({ year, countryHolidays }) => {
                   </TableRow>
                 </TableHead>
                 <TableBody>
-                  {generateMonthDays(year, month).map((week, weekIndex) => (
-                    <TableRow key={weekIndex}>
-                      {week.map((day, dayIndex) => {
-                        const isButtonDay = holidayMonths.some(
-                          (holidayMonth) =>
-                            holidayMonth.month === month + 1 &&
-                            holidayMonth.holidays.some(
-                              (holidayDay) => holidayDay.day === day
-                            )
-                        );
-                        return (
-                          <TableCell
-                            key={dayIndex}
-                            align="center"
-                            sx={{ padding: 1 }}
-                          >
-                            {isButtonDay ? (
-                              <Button
-                                variant="contained"
-                                sx={{ padding: 0, minWidth: "100%" }}
-                                onClick={() => handleHolidayDate(month, day)}
-                              >
-                                {day}
-                              </Button>
-                            ) : (
-                              <>{day > 0 ? day : ""}</>
-                            )}
-                          </TableCell>
-                        );
-                      })}
-                    </TableRow>
-                  ))}
+                  {/**
+                   * creating new component just to make this component more readable
+                   */}
+                  <CalendarTableBody
+                    year={year}
+                    month={month}
+                    holidayMonths={holidayMonths}
+                    longWeekendMonths={longWeekendMonths}
+                    showLongWeekends={showLongWeekends}
+                    generateMonthDays={generateMonthDays}
+                    handleHolidayDate={handleHolidayDate}
+                  />
                 </TableBody>
               </Table>
             </TableContainer>

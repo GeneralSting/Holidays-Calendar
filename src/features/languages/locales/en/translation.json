@@ -89,7 +89,9 @@
       "calendarDialogContent": "This display of the calendar and its holidays is universal, i.e. it is the same type of calendar regardless of the selected country or localization. The starting day of the calendar is Monday. The chosen universal representation does not favor any region or religion. Its sole purpose is to depict the holidays. The chosen approach was decided due to the simplicity of the display."
     },
     "countryWeekends": {
-      "switch": "Long weekend"
+      "switch": "Long weekend",
+      "bridgeDay": "Bridge day",
+      "nonBridgeDay": "Weekend"
     }
   },
   "footer": {

@@ -38,6 +38,7 @@ const initialState: CountryState = {
   holidaysCustomError: undefined,
   countryCode: undefined,
   holidaysYear: getCurrentYear(),
+  checkedLongWeekends: false,
 };
 
 export const countriesSlice = createSlice({
@@ -49,6 +50,9 @@ export const countriesSlice = createSlice({
     },
     updateHolidaysYear: (state, action) => {
       state.holidaysYear = action.payload;
+    },
+    updateCheckLongWeekends: (state, action) => {
+      state.checkedLongWeekends = action.payload;
     },
   },
   extraReducers: (builder) => {
@@ -82,5 +86,5 @@ export const countriesSlice = createSlice({
   },
 });
 
-export const { updateCountryCode, updateHolidaysYear } = countriesSlice.actions;
+export const { updateCountryCode, updateHolidaysYear, updateCheckLongWeekends } = countriesSlice.actions;
 export default countriesSlice.reducer;
