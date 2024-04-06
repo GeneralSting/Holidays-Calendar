@@ -5,8 +5,8 @@ import { Grid, Paper } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import InfoGrid from "./InfoGrid";
 import { CountryCalendar } from "../../types/countryCalendarProps";
-import NextHolidaysPrep from "./NextHolidaysPrep";
 import { DataReadinessCheck } from "../../../../components";
+import { MemoNextHolidaysPrep } from "./NextHolidaysPrep";
 
 const CountryInfo: FC<CountryCalendar> = ({ countryCode }) => {
   const { t } = useTranslation();
@@ -49,7 +49,7 @@ const CountryInfo: FC<CountryCalendar> = ({ countryCode }) => {
               square={false}
               sx={{ padding: "1rem", height: "100%" }}
             >
-              <NextHolidaysPrep nextHolidays={country.nextHolidays} />
+              <MemoNextHolidaysPrep nextHolidays={country.nextHolidays} />
             </Paper>
           </Grid>
         </Grid>

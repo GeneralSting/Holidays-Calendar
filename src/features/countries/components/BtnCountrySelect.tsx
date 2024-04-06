@@ -22,7 +22,7 @@ const BtnCountrySelect: FC<BtnCountrySelectProps> = ({
             padding: "1rem",
             borderRadius: 50,
             position: "relative",
-            backgroundImage: `url('../../../public/images/bg/select-btn-bg.jpg')`,
+            backgroundImage: `url('../../../images/bg/select-btn-bg.jpg')`,
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}

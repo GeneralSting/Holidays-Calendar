@@ -106,3 +106,4 @@ const HolidayHorizontalTabs: React.FC<InfoNextHolidays> = ({
 };
 
 export default HolidayHorizontalTabs;
+export const MemoHolidayHorizontalTabs = React.memo(HolidayHorizontalTabs)

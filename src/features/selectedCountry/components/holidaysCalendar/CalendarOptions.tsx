@@ -2,6 +2,7 @@ import { Grid } from "@mui/material";
 import SelectYear from "./SelectYear";
 import CaledarSwitch from "./CalendarSwitch";
 import CalendarQuestion from "./CalendarQuestion";
+import React from "react";
 
 const CalendarOptions = () => {
   return (
@@ -21,3 +22,5 @@ const CalendarOptions = () => {
 };
 
 export default CalendarOptions;
+export const MemoCalendarOptions = React.memo(CalendarOptions);
+

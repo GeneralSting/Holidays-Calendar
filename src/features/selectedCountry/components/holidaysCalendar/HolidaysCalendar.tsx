@@ -4,9 +4,9 @@ import { FC, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { useAppDispatch, useAppSelector } from "../../../../hooks/storeHooks";
 import { fetchCountryHolidays } from "../../data/countrySlice";
-import Calendar from "./Calendar";
-import CalendarOptions from "./CalendarOptions";
 import { DataReadinessCheck } from "../../../../components";
+import { MemoCalendarOptions } from "./CalendarOptions";
+import { MemoCalendar } from "./Calendar";
 
 const HolidaysCalendar: FC<CountryCalendar> = ({ countryCode }) => {
   const { t } = useTranslation();
@@ -31,10 +31,10 @@ const HolidaysCalendar: FC<CountryCalendar> = ({ countryCode }) => {
         data={country.holidays}
       >
         <Paper sx={{ pb: 2 }}>
-          <CalendarOptions />
+          <MemoCalendarOptions />
           <Divider sx={{ m: 2 }}>{t("main.countryHoliday.calendar")}</Divider>
           {country.holidaysYear && (
-            <Calendar
+            <MemoCalendar
               year={country.holidaysYear}
               countryHolidays={country.holidays}
             />

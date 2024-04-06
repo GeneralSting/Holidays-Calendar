@@ -40,14 +40,14 @@ const Calendar: FC<CalendarProps> = ({ year, countryHolidays }) => {
   };
 
   useEffect(() => {
-    const value = extractHolidayMonths(countryHolidays);
-    setHolidayMonths(value);
+    setHolidayMonths(extractHolidayMonths(countryHolidays));
+  }, [countryHolidays]);
+
+  useEffect(() => {
     if (showLongWeekends) {
       setLongWeekendMonths(extractLongWeekends(longWeekends, year));
-    } else {
-      setLongWeekendMonths([]);
     }
-  }, [countryHolidays, longWeekends, showLongWeekends, year]);
+  }, [longWeekends, showLongWeekends, year]);
 
   const months: JSX.Element[] = [];
   for (let month = 0; month < 12; month++) {
@@ -147,3 +147,5 @@ const Calendar: FC<CalendarProps> = ({ year, countryHolidays }) => {
 };
 
 export default Calendar;
+export const MemoCalendar = React.memo(Calendar);
+

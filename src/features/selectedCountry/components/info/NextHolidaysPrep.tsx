@@ -1,8 +1,8 @@
 import { CountryHoliday } from "../../types/countryHoliday";
-import { useEffect, useState } from "react";
-import HolidayHorizontalTabs from "./HolidayHorizontalTabs";
+import React, { useEffect, useState } from "react";
 import { CircularProgress } from "@mui/material";
 import { getCurrentDate } from "../../../../utils";
+import { MemoHolidayHorizontalTabs } from "./HolidayHorizontalTabs";
 
 const NextHolidaysPrep = ({
   nextHolidays,
@@ -14,7 +14,6 @@ const NextHolidaysPrep = ({
     []
   );
   const [todayHolidays, setTodayHolidays] = useState<CountryHoliday[]>([]);
-
   useEffect(() => {
     const upcomingHolidays: CountryHoliday[] = [];
     const todayCountryHolidays: CountryHoliday[] = [];
@@ -36,7 +35,7 @@ const NextHolidaysPrep = ({
   return (
     <>
       {nextThreeHolidays.length !== 0 ? (
-        <HolidayHorizontalTabs
+        <MemoHolidayHorizontalTabs
           todayHolidays={todayHolidays}
           nextHolidays={nextThreeHolidays}
         />
@@ -50,3 +49,4 @@ const NextHolidaysPrep = ({
 };
 
 export default NextHolidaysPrep;
+export const MemoNextHolidaysPrep = React.memo(NextHolidaysPrep);
