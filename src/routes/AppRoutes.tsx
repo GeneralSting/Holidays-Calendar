@@ -1,19 +1,40 @@
-import { CountryHolidays, PageNotFound, Welcome } from "../pages";
+import { Suspense, lazy } from "react";
+import { Welcome } from "../pages";
 import { AppRoute } from "../types";
+import { LoadingMsg } from "../components";
 
-const appRoutes: AppRoute[] = [
+const CountryHolidays = lazy(() =>
+  import("../pages").then((module) => {
+    return { default: module.CountryHolidays };
+  })
+);
+const PageNotFound = lazy(() =>
+  import("../pages").then((module) => {
+    return { default: module.CountryHolidays };
+  })
+);
+
+const AppRoutes: AppRoute[] = [
   {
     path: "/",
-    element: <Welcome />
+    element: <Welcome />,
   },
   {
     path: "/:selectedCountryCode",
-    element: <CountryHolidays />
+    element: (
+      <Suspense fallback={<LoadingMsg />}>
+        <CountryHolidays />
+      </Suspense>
+    ),
   },
   {
     path: "*",
-    element: <PageNotFound />
-  }  
+    element: (
+      <Suspense fallback={<LoadingMsg />}>
+        <PageNotFound />
+      </Suspense>
+    ),
+  },
 ];
 
-export default appRoutes;
+export default AppRoutes;

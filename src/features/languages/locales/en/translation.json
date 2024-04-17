@@ -51,7 +51,7 @@
       "today": "Today"
     },
     "countrySelect": {
-      "title": "Look holidays calendar of certain country",
+      "title": "Search holidays calendar of certain country",
       "btnNoCountry": "Explore country",
       "btnCountrySelected": "Explore: ",
       "selectLabel": "Choose or enter a country",

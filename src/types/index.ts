@@ -1,4 +1,4 @@
-import { DataReadinessCheckProps } from "./DataReadinessCheckProps";
+import { DataReadinessCheckProps } from "./dataReadinessCheckProps";
 import { AppRoute } from "./appRoute";
 import { AppText } from "./appText";
 import { CustomError } from "./customError";

@@ -10,6 +10,7 @@ import { useEffect, useState } from "react";
 import { CircularProgress, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { getCurrentYear } from "../utils";
+import { Helmet } from "react-helmet-async";
 
 const CountryHolidays = () => {
   const { selectedCountryCode } = useParams();
@@ -44,6 +45,18 @@ const CountryHolidays = () => {
 
   return (
     <>
+      <Helmet>
+        <title>{selectedCountryCode} Holidays</title>
+        <meta
+          name="description"
+          content="Displaying informations, holidays and long weekends for selected country"
+        />
+        <meta
+          name="keywords"
+          content="country, holidays, long weeknds, long weekends for country, holidays for country"
+        />
+        <link rel="canonical" href={`/${selectedCountryCode}`} />
+      </Helmet>
       {countries.length === 0 ? (
         <div className="centered-div">
           <CircularProgress color="primary" variant="indeterminate" />

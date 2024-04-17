@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import appRoutes from "./routes/AppRoutes";
+import AppRoutes from "./routes/AppRoutes";
 import CssBaseline from "@mui/material/CssBaseline";
 import { Grid, ThemeProvider } from "@mui/material";
 import { useAppSelector } from "./hooks/storeHooks";
@@ -25,7 +25,7 @@ function App() {
               <Grid item sm={1} />
               <Grid item sm={10} xs>
                 <Routes>
-                  {appRoutes.map((route, index) => (
+                  {AppRoutes.map((route, index) => (
                     <Route
                       key={index}
                       path={route.path}
