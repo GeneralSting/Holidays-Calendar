@@ -6,13 +6,16 @@ import store from "./store.ts";
 import { BrowserRouter } from "react-router-dom";
 import "./App.css";
 import "./features/languages/index.ts";
+import { HelmetProvider } from "react-helmet-async";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <Provider store={store}>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </Provider>
+    <HelmetProvider>
+      <Provider store={store}>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </Provider>
+    </HelmetProvider>
   </React.StrictMode>
 );

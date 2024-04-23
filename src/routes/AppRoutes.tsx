@@ -10,7 +10,7 @@ const CountryHolidays = lazy(() =>
 );
 const PageNotFound = lazy(() =>
   import("../pages").then((module) => {
-    return { default: module.CountryHolidays };
+    return { default: module.PageNotFound };
   })
 );
 

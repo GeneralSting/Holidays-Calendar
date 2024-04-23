@@ -22,11 +22,6 @@ const CountriesAutoComplete: FC<CountrySelectProps> = ({
 
   return (
     <Autocomplete
-      sx={{
-        "& .css-1q60rmi-MuiAutocomplete-endAdornment": {
-          top: "unset",
-        },
-      }}
       popupIcon={<ArrowDropDownCircleIcon fontSize="large" />}
       noOptionsText={t("main.countrySelect.noOptions")}
       id="country-search-select"

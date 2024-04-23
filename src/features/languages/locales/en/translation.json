@@ -41,6 +41,11 @@
   },
   "main": {
     "hello": "Hello World",
+    "pages": {
+      "welcomePage": "Welcome - Global Holidays",
+      "pageNotFound": "Page not found!",
+      "countryHolidaysPage": "holidays"
+    },
     "global": {
       "noCountries": "At the moments there are no available countries to select",
       "dataLoading": "Loading...",

@@ -41,6 +41,11 @@
   },
   "main": {
     "hello": "Pozdrav svijete",
+    "pages": {
+      "welcomePage": "Dobrodošli - Global Holidays",
+      "pageNotFound": "Stranica nije pronađena!",
+      "countryHolidaysPage": "praznici"
+    },
     "global": {
       "noCountries": "Trenutno nemamo država za prikazati",
       "dataLoading": "Učitavanje...",

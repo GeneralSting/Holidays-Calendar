@@ -46,14 +46,14 @@ const CountryHolidays = () => {
   return (
     <>
       <Helmet>
-        <title>{selectedCountryCode} Holidays</title>
+        <title>{selectedCountryCode + " " + t("main.pages.countryHolidaysPage")}</title>
         <meta
           name="description"
           content="Displaying informations, holidays and long weekends for selected country"
         />
         <meta
           name="keywords"
-          content="country, holidays, long weeknds, long weekends for country, holidays for country"
+          content="country, holidays, global holidays, long weeknds, long weekends for country, holidays for country"
         />
         <link rel="canonical" href={`/${selectedCountryCode}`} />
       </Helmet>
